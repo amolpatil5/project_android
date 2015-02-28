@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.amp.syadav"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="17" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.amp.syadav.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.amp.syadav.BiographyActivity"
+            android:label="@string/title_activity_biography" >
+        </activity>
+        <activity
+            android:name="com.amp.syadav.PoliticalCareerActivity"
+            android:label="@string/title_activity_political_career" >
+        </activity>
+        <activity
+            android:name="com.amp.syadav.SamajwadiPartyActivity"
+            android:label="@string/title_activity_samajwadi_party" >
+        </activity>
+        <activity
+            android:name="com.amp.syadav.EventsActivity"
+            android:label="@string/title_activity_events" >
+        </activity>
+        <activity
+            android:name="com.amp.syadav.ContactActivity"
+            android:label="@string/title_activity_contact" >
+        </activity>
+    </application>
+
+</manifest>

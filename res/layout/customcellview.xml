@@ -1,0 +1,39 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:padding="6dip"
+    android:background="@android:drawable/list_selector_background"
+    >
+
+     <ImageView
+         android:id="@+id/imageView1"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentLeft="true"
+         android:layout_alignParentTop="true"
+         android:src="@drawable/partylogo" />
+
+     <TextView
+         android:id="@+id/eventDesc"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+        
+         android:layout_marginTop="18dp"
+         android:layout_toRightOf="@+id/imageView1"
+         android:ellipsize="marquee"
+         android:paddingLeft="5dp"
+         android:text=" Update Description"
+         android:textSize="16sp" />
+
+     <TextView
+         android:id="@+id/eventTime"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/eventDesc"
+         android:layout_toRightOf="@+id/imageView1"
+         android:paddingLeft="5dp"
+         android:text=" Update Date"
+         android:textSize="12sp"
+         android:textStyle="italic" />
+       
+</RelativeLayout> 
