@@ -19,7 +19,7 @@ public class MainActivity extends Activity
 	private Context ctx = null;
 	private GridView Gv = null;
 	private String[] HomeMenu = { "Biography", "Political Career", "Samajwadi Party",
-			"Events","Contact" };
+			"Events","Contact us" };
 	private Integer[] HomeMenuResouce = { R.drawable.newszone_idle,
 			R.drawable.newszone_idle, R.drawable.newszone_idle,
 			R.drawable.newszone_idle, R.drawable.newszone_idle };
