@@ -45,12 +45,12 @@ public class MainImageGalleryActivity extends Activity {
     }
 
     private void initializeComponents() {
-        float spacing = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+        /*float spacing = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
                 ConstantValues.GRIDVIEW_SPACING, getResources().getDisplayMetrics());
-//        gridView.setNumColumns(DeviceUtil.getDeviceDimensions(MainImageGalleryActivity.this).x / ConstantValues.GRIDVIEW_COLUMN_WIDTH);
+        gridView.setNumColumns(DeviceUtil.getDeviceDimensions(MainImageGalleryActivity.this).x / ConstantValues.GRIDVIEW_COLUMN_WIDTH);
         gridView.setPadding((int) spacing, (int) spacing, (int) spacing, (int) spacing);
         gridView.setVerticalSpacing((int) spacing);
-        gridView.setHorizontalSpacing((int) spacing);
+        gridView.setHorizontalSpacing((int) spacing);*/
     }
 
     class LoadImagesFromFlickrTask extends AsyncTask<String, Integer, List<ImageInfo>> {
