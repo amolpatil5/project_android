@@ -2,32 +2,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+   
+    tools:context=".VideoGallaryActivity" >
 
-    tools:context=".MainActivity" >
-    
-       <include
+     <include
         android:id="@+id/headerContainer"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         layout="@layout/header_home" />
-    
-    
-
-    
-    <GridView
-        android:id="@+id/gridHome"
-        android:layout_width="fill_parent"
+     
+      <WebView
+        android:id="@+id/videoWebView"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/headerContainer"
-        android:layout_marginTop="90dp"
-       
-        android:gravity="center_vertical"
-        android:horizontalSpacing="5dp"
-        android:verticalSpacing="5dp"
-        android:listSelector="@android:color/transparent"
-        android:numColumns="3"
-        android:scrollbars="none"
-                 />
+        android:layout_alignParentLeft="true" />
 
 </RelativeLayout>

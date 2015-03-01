@@ -18,26 +18,30 @@ public class MainActivity extends Activity
 {
 	private Context ctx = null;
 	private GridView Gv = null;
-	private String[] HomeMenu = { "Biography", "Political Career", "Samajwadi Party",
-			"Events","Contact us" };
-	private Integer[] HomeMenuResouce = { R.drawable.newszone_idle,
-			R.drawable.newszone_idle, R.drawable.newszone_idle,
-			R.drawable.newszone_idle, R.drawable.newszone_idle };
-	@SuppressLint("NewApi")
+	private String[] HomeMenu = {"Biography", "Political Career","Samajwadi Party",
+			"Events","In Media","Photo Gallary","Video Gallary","Social Media","Contact Us"};
+	private String[] colorCodes = {"#d0021b", "#4a90e2","#f5a623",
+									"#bd10e0", "#417505","#d0021b",
+									"#4a90e2", "#f5a623","#bd10e0"};
+	
+	private Integer[] HomeMenuResouce = { R.drawable.ic_launcher,R.drawable.ic_launcher, R.drawable.ic_launcher,
+			R.drawable.ic_launcher,R.drawable.ic_launcher, R.drawable.ic_launcher,
+			R.drawable.ic_launcher,R.drawable.ic_launcher, R.drawable.ic_launcher};
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		ctx = this;
-		//headerSettings();
-		ActionBar actionBar = getActionBar();
-		actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.navbar));
-		actionBar.setTitle("Shivpal Singh Yadav");
-		actionBar.setLogo(R.drawable.partylogo);
+		headerSettings();
+//		ActionBar actionBar = getActionBar();
+//	actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.navbar));
+//		actionBar.setTitle("Shivpal Singh Yadav");
+		//actionBar.setLogo(R.drawable.partylogo);
 		
 		Gv = (GridView) findViewById(R.id.gridHome);
 		Gv.setAdapter(new MenuGridNewAdaptor(MainActivity.this,
-				HomeMenuResouce, HomeMenu));
+				HomeMenuResouce, HomeMenu,colorCodes));
 		
 		Gv.setOnItemClickListener(new OnItemClickListener() {
 			@Override
@@ -76,12 +80,42 @@ public class MainActivity extends Activity
 
 					break;
 				case 4:
+					
+					// inMedia
+					Intent inMediaIntent = new Intent(getApplicationContext(),
+							MediaActivity.class);
+					startActivity(inMediaIntent);
+					break;
+				case 5:
+					// PhotoGallary
+					Intent photoGallaryIntent = new Intent(getApplicationContext(),
+							PhotoGallaryActivity.class);
+					startActivity(photoGallaryIntent);
+
+					break;
+				case 6:
+					// Video
+					Intent videoGallaryIntent = new Intent(getApplicationContext(),
+							VideoGallaryActivity.class);
+					startActivity(videoGallaryIntent);
+
+					break;
+				case 7:
+					// Contact
+					Intent socialMediaIntent = new Intent(getApplicationContext(),
+							SocialMediaActivity.class);
+					startActivity(socialMediaIntent);
+
+					break;
+
+				case 8:
 					// Contact
 					Intent contactIntent = new Intent(getApplicationContext(),
 							ContactActivity.class);
 					startActivity(contactIntent);
 
 					break;
+
 				default:
 					break;
 				}
@@ -91,9 +125,9 @@ public class MainActivity extends Activity
 	}
 	private void headerSettings() {
 		findViewById(R.id.btnBackHeader).setVisibility(View.GONE);
-		findViewById(R.id.btnHomeHeader).setVisibility(View.GONE);	
+		findViewById(R.id.btnHomeHeader).setVisibility(View.VISIBLE);	
 		TextView headerTitle =(TextView)findViewById(R.id.txtHeading);
-		headerTitle.setText("ShivPal Singh Yadav");
+		headerTitle.setText(R.string.app_name);
 	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

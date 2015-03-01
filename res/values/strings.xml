@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">SYadav</string>
+    <string name="app_name">Shivpal Singh Yadav</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_biography">Biography</string>
     <string name="title_activity_political_career">Political Career</string>
     <string name="title_activity_samajwadi_party">Samajwadi Party</string>
     <string name="title_activity_events">Events</string>
-    <string name="title_activity_contact">Contact</string>
+    <string name="title_activity_contact">Contact Us</string>
     <string name="Birth">Birth:</string>
     <string name="Birth_Info">He was born on Basant panchami’s holy occasion in 1955 to lucky father Sudhar Singh and Mother Moorti Devi as their younger son. Shivpal ji has got sublime feeling about humanity by birth. He learnt all the things like mass-struggle and leadership, from his elder brother Mulayam Singh ji.His father Late. Sri Sudhar Singh was a soft hearted but labourious farmer and his mother Late Smt. Moorti Devi was a greatly skilled house wife.</string>
     <string name="Education">Education:</string>
@@ -16,7 +16,7 @@
 After that Shivpal Ji has completed his Graduation in 1976 from K.K.Degree College Etawah(Kanpur University) and in 1977 he has completed his B.P.Ed degree fro Lucknow University.</string>
     <string name="Family">Family:</string>
     <string name="Family_Info">Sri Shivpal ji get married with Smt. Sarla Yadav on 23 May 1981. Shivpaal ji has one daughter Dr.Anubha Yadav and one Son Aditya Yadav.</string>
-     <string name="Political_Career">Political Career</string>
+    <string name="Political_Career">Political Career</string>
     <string name="Political_Career_Info">He has been actively involved in social and political activities since has baby hood. He went door to door of his area and carried the patients to hospital for treatment, he always tried for the justice for poor people and took part in the socialist parties programs, these were in favorite activity.  During election of neta ji he used to distribute pamphlets and take the responsibility of the important task of booth-coordinator\n\n
 
 On the arrival of big leader like Madhu Lmey,Babu Kapil Dev, Caudhary Charan Singh, Janeshwar Mishra shivpaal ji hold all the major responsibility on his own shoulders.
@@ -48,10 +48,8 @@ He has published and distributed the historical charges of Dr. Lohia as: “Drau
 During the period he was the opposition-leader   he played a soldier’s role in the battle of mass struggle and collective revolt. He went to jail many- time   , wounded during movements but Shivpaal Ji never looked behind and prepare for the next movement   against corruption. Once again in 2012 on forming full majority  government by Samajwadi party he is given the responsibility of  P.W.D, Irrigation ,Cooperative Minister ,and he  is  working affectedly  to vanish the corruption in these departments ,He took strict action against many officers and engineers . A  News paper even called him “Action Minister”\n\n
 
 His own history is same as Samajwadi prty’s history and philosophy of mass-struggle and active clemency.</string>
-
     <string name="About">About:</string>
     <string name="About_Info">Samajwadi Party came into existence on October 4, 1992 in Lucknow under the leadership of Shri Mulayam Singh Yadav.</string>
-    
     <string name="Decription">Decription:</string>
     <string name="Description_Info">The Samajwadi Party believes in creating a socialist society, which works on the principle of equality and the party has a secular and democratic outlook. The Samajwadi Party believes in continuously working towards the upliftment of weaker sections of society and it stands against communal forces.\n\n
 
@@ -60,4 +58,14 @@ Freedom fighter, socialist and a great Parliamentarian, Ram Manohar Lohia is a g
 Mahatma Gandhi’s ideas greatly influenced Lohia who worked tirelessly during the freedom movement writing articles against the British, raising awareness against British imperialism in Europe, and after India became independent devoted himself to grassroots politics which included farmers cause, development work and fighting against social injustice. He also worked towards putting an end to capitalist-feudalistic tendencies.\n\n
 
 Lohia’s ability to awaken the people with his fiery articles on Satyagraha and his innate knowledge of social problems made him the foremost socialist leader of India. Lohia’s ‘Do or Die’ spirit is an inspiration and a guiding force for the Samajwadi Party in its struggle for social upliftment of the poor, backward and socially weaker sections of society.</string>
+    <string name="RESIDENCE_ADDRESS">7, Kalidas Marg,\nHazratganj,\nLucknow.\nPIN: 226001\nPhone: 0522-2239994\n\t\t\t\t\t0522-2235567</string>
+    <string name="RESIDENCE_TITLE">Residence Address:</string>
+    <string name="OFFICE_TITLE">Office Address:</string>
+    <string name="OFFICE_ADDRESS">Room No -99/100,\nVidhan Bhawan,\nLucknow.\nPIN: 226001\nPhone: 0522-2238088\n\t\t\t\t\t0522-2213272</string>
+    <string name="title_activity_media">In Media</string>
+    <string name="title_activity_photo_gallary">Photo Gallary</string>
+    <string name="title_activity_video_gallary">Video Gallary</string>
+    <string name="title_activity_social_media">Social Media</string>
+    <string name="title_activity_web_view">Social Media</string>
+
 </resources>

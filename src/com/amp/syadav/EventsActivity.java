@@ -18,6 +18,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.view.Menu;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -30,8 +31,8 @@ public class EventsActivity extends Activity
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_events);
+		headerSettings();
 		values = new ArrayList<EventsData>();
-		
 		
 		EventsData event1 = new EventsData("This is first event", "28 feb 2015");
 		EventsData event2 = new EventsData("This is Second event for Application", "2 march 2015");
@@ -43,7 +44,15 @@ public class EventsActivity extends Activity
 		eventsListView.setAdapter(adap);
 		
 	}
-
+	private void headerSettings() {
+		findViewById(R.id.btnBackHeader).setVisibility(View.VISIBLE);
+		findViewById(R.id.btnHomeHeader).setVisibility(View.GONE);	
+		TextView headerTitle =(TextView)findViewById(R.id.txtHeading);
+		headerTitle.setText(R.string.title_activity_events);
+	}
+	public void gotoBack(View v){
+		finish();
+	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

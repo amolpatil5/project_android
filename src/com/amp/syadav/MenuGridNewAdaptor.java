@@ -4,6 +4,7 @@
 package com.amp.syadav;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,11 +17,13 @@ public class MenuGridNewAdaptor extends BaseAdapter {
 	private Integer[] menuarr = null;
 	private Context ctx = null;
 	private String[] ContentDesc = null;
+	private String[] colorCode = null;
 
 	public MenuGridNewAdaptor(Context c, Integer[] homeGrid,
-			String[] ContentDescription) {
+			String[] ContentDescription,String[] colorCodes) {
 		menuarr = homeGrid;
 		ContentDesc = ContentDescription;
+		colorCode = colorCodes;
 		ctx = c;
 	}
 
@@ -37,6 +40,8 @@ public class MenuGridNewAdaptor extends BaseAdapter {
 			i.setImageResource(menuarr[position]);
 			txt = (TextView) convertView.findViewById(R.id.txtSelectorText);
 			txt.setText(ContentDesc[position]);
+			
+			convertView.setBackgroundColor(Color.parseColor(colorCode[position]));
 
 		} else {
 			convertView = (FrameLayout) convertView;

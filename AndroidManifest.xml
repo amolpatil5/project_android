@@ -7,7 +7,7 @@
     <uses-sdk
         android:minSdkVersion="11"
         android:targetSdkVersion="17" />
-
+<uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -41,6 +41,26 @@
         <activity
             android:name="com.amp.syadav.ContactActivity"
             android:label="@string/title_activity_contact" >
+        </activity>
+        <activity
+            android:name="com.amp.syadav.MediaActivity"
+            android:label="@string/title_activity_media" >
+        </activity>
+        <activity
+            android:name="com.amp.syadav.PhotoGallaryActivity"
+            android:label="@string/title_activity_photo_gallary" >
+        </activity>
+        <activity
+            android:name="com.amp.syadav.VideoGallaryActivity"
+            android:label="@string/title_activity_video_gallary" >
+        </activity>
+        <activity
+            android:name="com.amp.syadav.SocialMediaActivity"
+            android:label="@string/title_activity_social_media" >
+        </activity>
+        <activity
+            android:name="com.amp.syadav.WebViewActivity"
+            android:label="@string/title_activity_web_view" >
         </activity>
     </application>
 
