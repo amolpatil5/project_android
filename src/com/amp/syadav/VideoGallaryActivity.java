@@ -4,20 +4,26 @@ package com.amp.syadav;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.graphics.Bitmap;
 import android.view.Menu;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class VideoGallaryActivity extends Activity 
 {
-	WebView webview;
+	WebView webview;	
+	ProgressBar progress;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_video_gallary);
-		headerSettings();
+		headerSettings();progress = (ProgressBar) findViewById(R.id.videoProgressBar);
+		progress.setMax(100);
+		
 		webview = (WebView) findViewById(R.id.videoWebView);
 		webview.getSettings().setJavaScriptEnabled(true);
 		webview.setWebViewClient(new VideoWebViewClient());
@@ -25,10 +31,25 @@ public class VideoGallaryActivity extends Activity
 	}
 	 private class VideoWebViewClient extends WebViewClient{  //HERE IS THE MAIN CHANGE. 
 
-	        @Override
-	        public boolean shouldOverrideUrlLoading(WebView view, String url) {
-	            return (false);
-	        }
+		 @Override
+			public boolean shouldOverrideUrlLoading(WebView view, String url) {
+		
+				progress.setVisibility(View.VISIBLE);
+				view.loadUrl(url);
+				return true;
+			}
+			@Override
+			public void onPageFinished(WebView view, String url) {
+				progress.setVisibility(View.GONE);
+				super.onPageFinished(view, url);
+			}
+
+			@Override
+			public void onPageStarted(WebView view, String url, Bitmap favicon) {
+				super.onPageStarted(view, url, favicon);
+				progress.setVisibility(View.VISIBLE);
+		
+			}
 	    }
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

@@ -18,13 +18,15 @@ public class MenuGridNewAdaptor extends BaseAdapter {
 	private Context ctx = null;
 	private String[] ContentDesc = null;
 	private String[] colorCode = null;
+	int layoutResourceId;
 
 	public MenuGridNewAdaptor(Context c, Integer[] homeGrid,
-			String[] ContentDescription,String[] colorCodes) {
+			String[] ContentDescription,String[] colorCodes,int resId) {
 		menuarr = homeGrid;
 		ContentDesc = ContentDescription;
 		colorCode = colorCodes;
 		ctx = c;
+		layoutResourceId = resId;
 	}
 
 	public View getView(int position, View convertView, ViewGroup parent) {
@@ -32,7 +34,7 @@ public class MenuGridNewAdaptor extends BaseAdapter {
 		TextView txt;
 		if (convertView == null) {
 			convertView = LayoutInflater.from(ctx).inflate(
-					R.layout.menu_grid_button, parent, false);
+					layoutResourceId, parent, false);  //  R.layout.menu_grid_button
 			i = (ImageView) convertView
 					.findViewById(R.id.imgSelectorBackground);
 			String contentDes = ContentDesc[position].replace("\n", "");

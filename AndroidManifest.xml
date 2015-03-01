@@ -15,52 +15,63 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.amp.syadav.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name="com.amp.syadav.BiographyActivity"
-            android:label="@string/title_activity_biography" >
+            android:label="@string/title_activity_biography" 
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name="com.amp.syadav.PoliticalCareerActivity"
-            android:label="@string/title_activity_political_career" >
+            android:label="@string/title_activity_political_career"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.amp.syadav.SamajwadiPartyActivity"
-            android:label="@string/title_activity_samajwadi_party" >
+            android:label="@string/title_activity_samajwadi_party"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.amp.syadav.EventsActivity"
-            android:label="@string/title_activity_events" >
+            android:label="@string/title_activity_events"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.amp.syadav.ContactActivity"
-            android:label="@string/title_activity_contact" >
+            android:label="@string/title_activity_contact" 
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name="com.amp.syadav.MediaActivity"
-            android:label="@string/title_activity_media" >
+            android:label="@string/title_activity_media" 
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name="com.amp.syadav.PhotoGallaryActivity"
-            android:label="@string/title_activity_photo_gallary" >
+            android:label="@string/title_activity_photo_gallary"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.amp.syadav.VideoGallaryActivity"
-            android:label="@string/title_activity_video_gallary" >
+            android:label="@string/title_activity_video_gallary"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.amp.syadav.SocialMediaActivity"
-            android:label="@string/title_activity_social_media" >
+            android:label="@string/title_activity_social_media"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.amp.syadav.WebViewActivity"
-            android:label="@string/title_activity_web_view" >
+            android:label="@string/title_activity_web_view"
+            android:screenOrientation="portrait" >
         </activity>
     </application>
 

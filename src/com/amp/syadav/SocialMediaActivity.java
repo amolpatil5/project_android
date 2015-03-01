@@ -17,7 +17,7 @@ public class SocialMediaActivity extends Activity
 	private Context ctx = null;
 	private GridView Gv = null;
 	private String[] HomeMenu = {"Facebook", "Google Plus","Twitter"};
-	private String[] colorCodes = {"#d0021b", "#4a90e2","#f5a623"};
+	private String[] colorCodes = {"#3b5998", "#dd4b39","#00aced"};
 	
 	private Integer[] HomeMenuResouce = { R.drawable.ic_launcher,R.drawable.ic_launcher, R.drawable.ic_launcher};
 
@@ -26,11 +26,9 @@ public class SocialMediaActivity extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_social_media);
 		headerSettings();
-		
-
 		Gv = (GridView) findViewById(R.id.gridHome);
 		Gv.setAdapter(new MenuGridNewAdaptor(SocialMediaActivity.this,
-				HomeMenuResouce, HomeMenu,colorCodes));
+				HomeMenuResouce, HomeMenu,colorCodes,R.layout.social_grid_button));
 		
 		Gv.setOnItemClickListener(new OnItemClickListener() {
 			@Override
@@ -60,6 +58,8 @@ public class SocialMediaActivity extends Activity
 				default:
 					break;
 				}
+				String actTitle =  getResources().getString(R.string.title_activity_web_view);
+				webViewIntent.putExtra("TITLE", actTitle);
 				startActivity(webViewIntent);
 			}
 		});

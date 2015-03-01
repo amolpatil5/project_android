@@ -1,9 +1,8 @@
 package com.amp.syadav;
 
 
+
 import android.os.Bundle;
-import android.annotation.SuppressLint;
-import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -21,9 +20,9 @@ public class MainActivity extends Activity
 	private String[] HomeMenu = {"Biography", "Political Career","Samajwadi Party",
 			"Events","In Media","Photo Gallary","Video Gallary","Social Media","Contact Us"};
 	private String[] colorCodes = {"#d0021b", "#4a90e2","#f5a623",
-									"#bd10e0", "#417505","#d0021b",
-									"#4a90e2", "#f5a623","#bd10e0"};
-	
+			"#bd10e0", "#417505","#d0021b",
+			"#4a90e2", "#f5a623","#bd10e0"};
+
 	private Integer[] HomeMenuResouce = { R.drawable.ic_launcher,R.drawable.ic_launcher, R.drawable.ic_launcher,
 			R.drawable.ic_launcher,R.drawable.ic_launcher, R.drawable.ic_launcher,
 			R.drawable.ic_launcher,R.drawable.ic_launcher, R.drawable.ic_launcher};
@@ -34,15 +33,11 @@ public class MainActivity extends Activity
 		setContentView(R.layout.activity_main);
 		ctx = this;
 		headerSettings();
-//		ActionBar actionBar = getActionBar();
-//	actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.navbar));
-//		actionBar.setTitle("Shivpal Singh Yadav");
-		//actionBar.setLogo(R.drawable.partylogo);
-		
+
 		Gv = (GridView) findViewById(R.id.gridHome);
 		Gv.setAdapter(new MenuGridNewAdaptor(MainActivity.this,
-				HomeMenuResouce, HomeMenu,colorCodes));
-		
+				HomeMenuResouce, HomeMenu,colorCodes,R.layout.menu_grid_button));
+
 		Gv.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1,
@@ -80,11 +75,18 @@ public class MainActivity extends Activity
 
 					break;
 				case 4:
-					
+
 					// inMedia
-					Intent inMediaIntent = new Intent(getApplicationContext(),
-							MediaActivity.class);
-					startActivity(inMediaIntent);
+					//					Intent inMediaIntent = new Intent(getApplicationContext(),
+					//							MediaActivity.class);
+					//					startActivity(inMediaIntent);
+
+					Intent webViewIntent = new Intent(getApplicationContext(),
+							WebViewActivity.class);
+					webViewIntent.putExtra("SOCIAL_URL", "http://shivpalsinghyadav.com/category/in-news/");
+					String actTitle =  getResources().getString(R.string.title_activity_media);
+					webViewIntent.putExtra("TITLE", actTitle);
+					startActivity(webViewIntent);
 					break;
 				case 5:
 					// PhotoGallary
@@ -121,7 +123,7 @@ public class MainActivity extends Activity
 				}
 			}
 		});
-		
+
 	}
 	private void headerSettings() {
 		findViewById(R.id.btnBackHeader).setVisibility(View.GONE);
@@ -135,5 +137,11 @@ public class MainActivity extends Activity
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
-
+	public void gotoHome(View v){
+		Intent i=new Intent(android.content.Intent.ACTION_SEND);
+		i.setType("text/plain");
+		i.putExtra(android.content.Intent.EXTRA_SUBJECT,"Shivpal Singh Yadav");
+		i.putExtra(android.content.Intent.EXTRA_TEXT, "Download application from URL: www.xyz.com");
+		startActivity(Intent.createChooser(i,"Share via"));
+	}
 }
