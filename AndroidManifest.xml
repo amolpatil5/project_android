@@ -8,6 +8,7 @@
         android:minSdkVersion="11"
         android:targetSdkVersion="17" />
 <uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -62,6 +63,8 @@
             android:name="com.amp.syadav.WebViewActivity"
             android:label="@string/title_activity_web_view" >
         </activity>
+        <activity android:name=".MediumViewActivity"/>
+        <activity android:name=".MainImageGalleryActivity"/>
     </application>
 
 </manifest>

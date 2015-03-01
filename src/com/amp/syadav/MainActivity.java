@@ -1,18 +1,18 @@
 package com.amp.syadav;
 
 
-import android.os.Bundle;
-import android.annotation.SuppressLint;
-import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 import android.widget.TextView;
-import android.widget.AdapterView.OnItemClickListener;
+
+
 
 public class MainActivity extends Activity 
 {
@@ -89,7 +89,7 @@ public class MainActivity extends Activity
 				case 5:
 					// PhotoGallary
 					Intent photoGallaryIntent = new Intent(getApplicationContext(),
-							PhotoGallaryActivity.class);
+							MainImageGalleryActivity.class);
 					startActivity(photoGallaryIntent);
 
 					break;
