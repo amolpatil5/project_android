@@ -2,9 +2,10 @@ package com.amp.syadav;
 
 
 
-import android.os.Bundle;
 import android.app.Activity;
 import android.graphics.Bitmap;
+import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.webkit.WebView;
@@ -64,6 +65,21 @@ public class VideoGallaryActivity extends Activity
 		headerTitle.setText(R.string.title_activity_video_gallary);
 	}
 	public void gotoBack(View v){
+		webview.loadUrl("");
+    	webview.stopLoading();
 		finish();
+	}
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+	    // TODO Auto-generated method stub
+	    if(keyCode==event.KEYCODE_BACK)
+	    {
+	    	webview.loadUrl("");
+	    	webview.stopLoading();
+
+	        finish();
+
+	    }
+	    return super.onKeyDown(keyCode, event);
 	}
 }
