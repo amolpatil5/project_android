@@ -23,9 +23,9 @@ public class MainActivity extends Activity
 			"#bd10e0", "#417505","#d0021b",
 			"#4a90e2", "#f5a623","#bd10e0"};
 
-	private Integer[] HomeMenuResouce = { R.drawable.ic_launcher,R.drawable.ic_launcher, R.drawable.ic_launcher,
-			R.drawable.ic_launcher,R.drawable.ic_launcher, R.drawable.ic_launcher,
-			R.drawable.ic_launcher,R.drawable.ic_launcher, R.drawable.ic_launcher};
+	private Integer[] HomeMenuResouce = { R.drawable.ic_1,R.drawable.ic_2, R.drawable.ic_3,
+			R.drawable.ic_4,R.drawable.ic_5, R.drawable.ic_6,
+			R.drawable.ic_7,R.drawable.ic_8, R.drawable.ic_9};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
