@@ -14,26 +14,26 @@
          android:src="@drawable/ic_launcher" />
 
      <TextView
-         android:id="@+id/eventDesc"
+         android:id="@+id/eventTitle"  
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
-        
-         android:layout_marginTop="18dp"
+         android:layout_marginTop="5dp"
          android:layout_toRightOf="@+id/imageView1"
-         android:ellipsize="marquee"
+         android:textStyle="bold"
          android:paddingLeft="5dp"
-         android:text=" Update Description"
+         android:text=" eventTitle"
          android:textSize="16sp" />
 
      <TextView
-         android:id="@+id/eventTime"
+         android:id="@+id/eventDesc"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
-         android:layout_below="@+id/eventDesc"
+         android:layout_below="@+id/eventTitle"
          android:layout_toRightOf="@+id/imageView1"
          android:paddingLeft="5dp"
-         android:text=" Update Date"
+         android:text="eventDesc"
+         android:ellipsize="marquee"
          android:textSize="12sp"
-         android:textStyle="italic" />
+          />
        
 </RelativeLayout> 

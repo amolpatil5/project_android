@@ -13,14 +13,19 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import com.amp.helper.*;
+
+
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.AdapterView.OnItemClickListener;
 
 public class EventsActivity extends Activity 
 {
@@ -32,16 +37,40 @@ public class EventsActivity extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_events);
 		headerSettings();
+		
+		new getEventsDataTask().execute("updates");
 		values = new ArrayList<EventsData>();
 		
-		EventsData event1 = new EventsData("This is first event", "28 feb 2015");
-		EventsData event2 = new EventsData("This is Second event for Application", "2 march 2015");
-		values.add(event1);
-		values.add(event2);
+//		EventsData event1 = new EventsData("This is first event", "28 feb 2015");
+//		EventsData event2 = new EventsData("This is Second event for Application", "2 march 2015");
+//		values.add(event1);
+//		values.add(event2);
 		
 		eventsListView = (ListView) findViewById(R.id.eventsListView);
 		adap = new EventCellAdaptor(this,R.layout.customcellview, values);
 		eventsListView.setAdapter(adap);
+		
+		eventsListView.setOnItemClickListener(new OnItemClickListener() 
+		{
+			@Override
+			public void onItemClick(AdapterView<?> myAdapter, View myView,
+					int myIntent, long myLng) {
+				EventsData selectedFromList = (EventsData) (eventsListView
+						.getItemAtPosition(myIntent));
+
+				
+					String imageName = selectedFromList.imageURL;
+					String detail = selectedFromList.detail;
+					
+					System.out.println("detail" +detail);
+					Intent eventDetailIntent = new Intent(getApplicationContext(),
+							EventDetailActivity.class);
+					eventDetailIntent.putExtra("EVENT_DETAIL", detail);
+					eventDetailIntent.putExtra("IMAGE_NAME", imageName);
+					startActivity(eventDetailIntent);
+				
+			}
+		});
 		
 	}
 	private void headerSettings() {
@@ -61,7 +90,7 @@ public class EventsActivity extends Activity
 	}
 	public void refreshEventsUI(String results) throws JSONException 
 	{
-	System.out.println("IMGUpdatesActivity.refreshUpdatesUI()");	
+	System.out.println("getEventsDataList.refreshUpdatesUI()");	
 	ArrayList<EventsData> respSchData = getEventsDataList(results);
 	this.values.addAll(respSchData);
 	adap.notifyDataSetChanged();
@@ -126,7 +155,7 @@ public class EventsActivity extends Activity
 		 JSONObject objJSONObject  =  new JSONObject(result);
 		 
 		 System.out.println("objJSONObject = "+objJSONObject.toString());
-		 JSONArray jsonObjectArr =  objJSONObject.getJSONArray("Events");
+		 JSONArray jsonObjectArr =  objJSONObject.getJSONArray("events");
 	       
 		for(int i = 0, count = jsonObjectArr.length(); i< count; i++)
 			{
@@ -136,9 +165,10 @@ public class EventsActivity extends Activity
 			    	JSONObject jsonChildNode = jsonObjectArr.getJSONObject(i);
                  
                  /******* Fetch node values **********/
-                
-			    	tempSchData.descStr  = jsonChildNode.optString("update").toString();
-			    	tempSchData.timeStr= jsonChildNode.optString("time").toString();
+			    	tempSchData.descStr  = jsonChildNode.optString("desc").toString();
+			    	tempSchData.title= jsonChildNode.optString("title").toString();
+			    	tempSchData.detail= jsonChildNode.optString("details").toString();
+			    	tempSchData.imageURL= jsonChildNode.optString("image").toString();
                  toReturnList.add(tempSchData);
 			    }
 			    catch (JSONException e) {

@@ -67,5 +67,9 @@ Lohia’s ability to awaken the people with his fiery articles on Satyagraha and
     <string name="title_activity_video_gallary">Video Gallary</string>
     <string name="title_activity_social_media">Social Media</string>
     <string name="title_activity_web_view">Social Media</string>
+    <string name="title_activity_launcher_image">Shivpal Singh Yadav</string>
+    <string name="title_activity_event_detail">EventDetailActivity</string>
+    
+    <string name="VIDHAN_BHAVAN">Vidhan Bhavan</string>
 
 </resources>

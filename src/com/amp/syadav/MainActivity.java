@@ -18,14 +18,14 @@ public class MainActivity extends Activity
 	private Context ctx = null;
 	private GridView Gv = null;
 	private String[] HomeMenu = {"Biography", "Political Career","Samajwadi Party",
-			"Events","In Media","Photo Gallary","Video Gallary","Social Media","Contact Us"};
+			"Events","In Media","Photo Gallary","Video Gallary","Social Media","Contact Us","Vidhan Bhavan"};
 	private String[] colorCodes = {"#d0021b", "#4a90e2","#f5a623",
 			"#bd10e0", "#417505","#d0021b",
-			"#4a90e2", "#f5a623","#bd10e0"};
+			"#4a90e2", "#f5a623","#bd10e0","#417505"};
 
-	private Integer[] HomeMenuResouce = { R.drawable.ic_1,R.drawable.ic_2, R.drawable.ic_3,
-			R.drawable.ic_4,R.drawable.ic_5, R.drawable.ic_6,
-			R.drawable.ic_7,R.drawable.ic_8, R.drawable.ic_9};
+	private Integer[] HomeMenuResouce = { R.drawable.ic_1,R.drawable.ic_9, R.drawable.ic_5,
+			R.drawable.ic_4,R.drawable.ic_6, R.drawable.ic_2,
+			R.drawable.ic_8,R.drawable.ic_7, R.drawable.ic_3,R.drawable.ic_6};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -69,9 +69,18 @@ public class MainActivity extends Activity
 					break;
 				case 3:
 					// Events
-					Intent eventsIntent = new Intent(getApplicationContext(),
-							EventsActivity.class);
-					startActivity(eventsIntent);
+//					Intent eventsIntent = new Intent(getApplicationContext(),
+//							EventsActivity.class);
+//					startActivity(eventsIntent);
+					
+					Intent webViewIntent = new Intent(getApplicationContext(),
+							WebViewActivity.class);
+					webViewIntent.putExtra("SOCIAL_URL", "https://dummy-class.herokuapp.com/events_list");
+					String actTitle =  getResources().getString(R.string.title_activity_events);
+					webViewIntent.putExtra("TITLE", actTitle);
+					startActivity(webViewIntent);
+//					
+					
 
 					break;
 				case 4:
@@ -81,12 +90,12 @@ public class MainActivity extends Activity
 					//							MediaActivity.class);
 					//					startActivity(inMediaIntent);
 
-					Intent webViewIntent = new Intent(getApplicationContext(),
+					Intent webViewIntent1 = new Intent(getApplicationContext(),
 							WebViewActivity.class);
-					webViewIntent.putExtra("SOCIAL_URL", "http://shivpalsinghyadav.com/category/in-news/");
-					String actTitle =  getResources().getString(R.string.title_activity_media);
-					webViewIntent.putExtra("TITLE", actTitle);
-					startActivity(webViewIntent);
+					webViewIntent1.putExtra("SOCIAL_URL", "http://dummy-class.herokuapp.com/media");
+					String actTitle1 =  getResources().getString(R.string.title_activity_media);
+					webViewIntent1.putExtra("TITLE", actTitle1);
+					startActivity(webViewIntent1);
 					break;
 				case 5:
 					// PhotoGallary
@@ -117,6 +126,23 @@ public class MainActivity extends Activity
 					startActivity(contactIntent);
 
 					break;
+				case 9:
+					// Events
+//					Intent eventsIntent = new Intent(getApplicationContext(),
+//							EventsActivity.class);
+//					startActivity(eventsIntent);
+					
+					Intent webViewIntent3 = new Intent(getApplicationContext(),
+							WebViewActivity.class);
+					webViewIntent3.putExtra("SOCIAL_URL", "https://dummy-class.herokuapp.com/vidhan_bhavan");
+					String actTitle3 =  getResources().getString(R.string.VIDHAN_BHAVAN);
+					webViewIntent3.putExtra("TITLE", actTitle3);
+					startActivity(webViewIntent3);
+//					
+					
+
+					break;
+
 
 				default:
 					break;
@@ -141,7 +167,7 @@ public class MainActivity extends Activity
 		Intent i=new Intent(android.content.Intent.ACTION_SEND);
 		i.setType("text/plain");
 		i.putExtra(android.content.Intent.EXTRA_SUBJECT,"Shivpal Singh Yadav");
-		i.putExtra(android.content.Intent.EXTRA_TEXT, "Download application from URL: www.xyz.com");
+		i.putExtra(android.content.Intent.EXTRA_TEXT, "To read more information Please visit http://shivpalsinghyadav.com/");
 		startActivity(Intent.createChooser(i,"Share via"));
 	}
 }

@@ -7,7 +7,9 @@
     <uses-sdk
         android:minSdkVersion="11"
         android:targetSdkVersion="17" />
-<uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -16,17 +18,15 @@
         <activity
             android:name="com.amp.syadav.MainActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait"
-             >
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name="com.amp.syadav.BiographyActivity"
-            android:label="@string/title_activity_biography" 
-            android:screenOrientation="portrait">
+            android:label="@string/title_activity_biography"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.amp.syadav.PoliticalCareerActivity"
@@ -45,13 +45,13 @@
         </activity>
         <activity
             android:name="com.amp.syadav.ContactActivity"
-            android:label="@string/title_activity_contact" 
-            android:screenOrientation="portrait">
+            android:label="@string/title_activity_contact"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.amp.syadav.MediaActivity"
-            android:label="@string/title_activity_media" 
-            android:screenOrientation="portrait">
+            android:label="@string/title_activity_media"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.amp.syadav.PhotoGallaryActivity"
@@ -72,6 +72,19 @@
             android:name="com.amp.syadav.WebViewActivity"
             android:label="@string/title_activity_web_view"
             android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.amp.syadav.LauncherImageActivity"
+            android:label="@string/title_activity_launcher_image" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.amp.syadav.EventDetailActivity"
+            android:label="@string/title_activity_event_detail" >
         </activity>
     </application>
 

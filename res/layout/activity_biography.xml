@@ -12,12 +12,21 @@
         android:layout_alignParentTop="true"
         layout="@layout/header_home" />
     
+       <ImageView
+                android:id="@+id/biohHeadImageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/biography_banner"
+                 android:layout_below="@id/headerContainer" />
+    
+      
+      
     <ScrollView
         android:id="@+id/scrollView1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
-        android:layout_below="@id/headerContainer"
+        android:layout_below="@id/biohHeadImageView"
          android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -33,8 +42,7 @@
        android:id="@+id/birthTitle"
        android:layout_width="match_parent"
        android:layout_height="30dp"
-       android:layout_marginTop="25dp"
-       
+      
        android:text="@string/Birth"
        android:textAppearance="?android:attr/textAppearanceMedium"
        android:textSize="20dp"
@@ -50,7 +58,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:text="@string/Birth_Info"
-        android:textSize="15dp" />
+        android:textSize="16sp"
+        android:fontFamily="sans-serif-light"
+         />
 
     <TextView
         android:id="@+id/educationTitle"
@@ -71,7 +81,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:text="@string/Education_Info"
-        android:textSize="15dp" />
+         android:textSize="16sp"
+        android:fontFamily="sans-serif-light" />
     
      <TextView
         android:id="@+id/familyTitle"
@@ -90,13 +101,10 @@
         android:id="@+id/familyInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-       android:textSize="15dp"
+       android:fontFamily="sans-serif-light"
+        android:textSize="16sp"
         android:layout_marginTop="5dp"
         android:text="@string/Family_Info" />
-    
-    
-
-    
         </LinearLayout>
     </ScrollView>
 

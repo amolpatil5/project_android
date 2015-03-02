@@ -38,13 +38,13 @@ public class EventCellAdaptor extends ArrayAdapter<EventsData>
 			LayoutInflater inflater = ((Activity) context).getLayoutInflater();
 			row = inflater.inflate(layoutResourceId, parent, false);
 			final EventsDataHolder holder = new EventsDataHolder();
-			holder.eventDesc = (TextView) row.findViewById(R.id.eventDesc);
-		   holder.eventTime = (TextView) row.findViewById(R.id.eventTime);
-
+			holder.eventDesc = (TextView) row.findViewById(R.id.eventTitle);
+		    holder.eventTitle = (TextView) row.findViewById(R.id.eventDesc);
+		   
 			row.setTag(holder);
 		} else {
 			row = convertView;
-			((EventsDataHolder) row.getTag()).eventTime.setTag(data
+			((EventsDataHolder) row.getTag()).eventTitle.setTag(data
 					.get(position));
 			((EventsDataHolder) row.getTag()).eventDesc.setTag(data
 					.get(position));
@@ -54,7 +54,7 @@ public class EventCellAdaptor extends ArrayAdapter<EventsData>
 		EventsDataHolder holder = (EventsDataHolder) row.getTag();
 		EventsData weather = data.get(position);
 		holder.eventDesc.setText(weather.descStr);
-		holder.eventTime.setText(weather.timeStr);
+		holder.eventTitle.setText(weather.title);
 
 		return row;
 	}
@@ -62,7 +62,9 @@ public class EventCellAdaptor extends ArrayAdapter<EventsData>
 	static class EventsDataHolder 
 	{
 		TextView eventDesc;
-		TextView eventTime;
+		TextView eventTitle;
+		//TextView eventDetails;
+		//TextView eventImageURL;
 	}
 
 }

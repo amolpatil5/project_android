@@ -32,7 +32,8 @@ public class MenuGridNewAdaptor extends BaseAdapter {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		ImageView i;
 		TextView txt;
-		if (convertView == null) {
+//		if (convertView == null) 
+//		{
 			convertView = LayoutInflater.from(ctx).inflate(
 					layoutResourceId, parent, false);  //  R.layout.menu_grid_button
 			i = (ImageView) convertView
@@ -45,9 +46,9 @@ public class MenuGridNewAdaptor extends BaseAdapter {
 			
 			convertView.setBackgroundColor(Color.parseColor(colorCode[position]));
 
-		} else {
-			convertView = (FrameLayout) convertView;
-		}
+//		} else {
+//			convertView = (FrameLayout) convertView;
+//		}
 
 		return convertView;
 	}
