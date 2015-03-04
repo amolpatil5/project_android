@@ -50,7 +50,7 @@ During the period he was the opposition-leader   he played a soldier’s role in
 His own history is same as Samajwadi prty’s history and philosophy of mass-struggle and active clemency.</string>
     <string name="About">About:</string>
     <string name="About_Info">Samajwadi Party came into existence on October 4, 1992 in Lucknow under the leadership of Shri Mulayam Singh Yadav.</string>
-    <string name="Decription">Decription:</string>
+    <string name="Decription">Description:</string>
     <string name="Description_Info">The Samajwadi Party believes in creating a socialist society, which works on the principle of equality and the party has a secular and democratic outlook. The Samajwadi Party believes in continuously working towards the upliftment of weaker sections of society and it stands against communal forces.\n\n
 
 Freedom fighter, socialist and a great Parliamentarian, Ram Manohar Lohia is a guiding light for the Samajwadi Party. Ram Manohar Lohia’s integrity, selfless struggle for India’s independence and his ability to unite people of all sections of society has greatly influenced the leaders, youth and workers in the party. Lohia was jailed by the British several times during the freedom struggle and he fought rigorously all his life for social equality.\n\n
@@ -69,7 +69,7 @@ Lohia’s ability to awaken the people with his fiery articles on Satyagraha and
     <string name="title_activity_web_view">Social Media</string>
     <string name="title_activity_launcher_image">Shivpal Singh Yadav</string>
     <string name="title_activity_event_detail">EventDetailActivity</string>
-    
-    <string name="VIDHAN_BHAVAN">Vidhan Bhavan</string>
+    <string name="VIDHAN_BHAVAN">Vidhan Sabha</string>
+    <string name="title_activity_department">Departments</string>
 
 </resources>

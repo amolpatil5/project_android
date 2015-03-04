@@ -65,8 +65,10 @@ public class EventsActivity extends Activity
 					System.out.println("detail" +detail);
 					Intent eventDetailIntent = new Intent(getApplicationContext(),
 							EventDetailActivity.class);
+					
 					eventDetailIntent.putExtra("EVENT_DETAIL", detail);
 					eventDetailIntent.putExtra("IMAGE_NAME", imageName);
+					
 					startActivity(eventDetailIntent);
 				
 			}

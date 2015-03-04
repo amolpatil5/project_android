@@ -75,7 +75,9 @@
         </activity>
         <activity
             android:name="com.amp.syadav.LauncherImageActivity"
-            android:label="@string/title_activity_launcher_image" >
+            android:label="@string/title_activity_launcher_image"
+             android:screenOrientation="portrait"
+             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -84,7 +86,14 @@
         </activity>
         <activity
             android:name="com.amp.syadav.EventDetailActivity"
-            android:label="@string/title_activity_event_detail" >
+            android:label="@string/title_activity_event_detail"
+             android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.amp.syadav.DepartmentActivity"
+            android:label="@string/title_activity_department"
+             android:screenOrientation="portrait" 
+            >
         </activity>
     </application>
 

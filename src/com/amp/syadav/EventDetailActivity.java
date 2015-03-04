@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class EventDetailActivity extends Activity {
@@ -12,6 +13,7 @@ public class EventDetailActivity extends Activity {
   
   String detailStr;
   String imageName;
+  ImageView eventDetailImageView;
   
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,8 @@ public class EventDetailActivity extends Activity {
 		Intent intent = getIntent();
 		detailStr = intent.getStringExtra("EVENT_DETAIL");
 		imageName = intent.getStringExtra("IMAGE_NAME");
+		
+		eventDetailImageView = (ImageView)findViewById(R.id.eventDetailImageView);
 		
 		detailsTxt.setText (detailStr);
 		
