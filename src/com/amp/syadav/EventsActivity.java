@@ -61,13 +61,15 @@ public class EventsActivity extends Activity
 				
 					String imageName = selectedFromList.imageURL;
 					String detail = selectedFromList.detail;
+					String title = selectedFromList.title;
 					
 					System.out.println("detail" +detail);
 					Intent eventDetailIntent = new Intent(getApplicationContext(),
 							EventDetailActivity.class);
 					
 					eventDetailIntent.putExtra("EVENT_DETAIL", detail);
-					eventDetailIntent.putExtra("IMAGE_NAME", imageName);
+					eventDetailIntent.putExtra("EVENT_TITLE", title);
+					eventDetailIntent.putExtra("IMAGE_URL", imageName);
 					
 					startActivity(eventDetailIntent);
 				

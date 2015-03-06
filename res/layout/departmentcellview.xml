@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-  
+   android:background="@android:drawable/picture_frame"
     android:orientation="vertical" >
     <TextView
          android:id="@+id/departmentTitle"  
@@ -15,7 +15,6 @@
          android:layout_gravity="center_vertical"
          android:gravity="center_horizontal"
         android:fontFamily="sans-serif-light"
-        
         android:textSize="20sp"/>
 
 </LinearLayout>

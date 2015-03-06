@@ -72,15 +72,15 @@ public class MainActivity extends Activity
 					Intent eventsIntent = new Intent(getApplicationContext(),
 							EventsActivity.class);
 					startActivity(eventsIntent);
-					
-//					Intent webViewIntent = new Intent(getApplicationContext(),
-//							WebViewActivity.class);
-//					webViewIntent.putExtra("SOCIAL_URL", "https://dummy-class.herokuapp.com/events_list");
-//					String actTitle =  getResources().getString(R.string.title_activity_events);
-//					webViewIntent.putExtra("TITLE", actTitle);
-//					startActivity(webViewIntent);
-//					
-					
+
+					//					Intent webViewIntent = new Intent(getApplicationContext(),
+					//							WebViewActivity.class);
+					//					webViewIntent.putExtra("SOCIAL_URL", "https://dummy-class.herokuapp.com/events_list");
+					//					String actTitle =  getResources().getString(R.string.title_activity_events);
+					//					webViewIntent.putExtra("TITLE", actTitle);
+					//					startActivity(webViewIntent);
+					//					
+
 
 					break;
 				case 4:
@@ -128,10 +128,10 @@ public class MainActivity extends Activity
 					break;
 				case 9:
 					// Events
-//					Intent eventsIntent = new Intent(getApplicationContext(),
-//							EventsActivity.class);
-//					startActivity(eventsIntent);
-					
+					//					Intent eventsIntent = new Intent(getApplicationContext(),
+					//							EventsActivity.class);
+					//					startActivity(eventsIntent);
+
 					Intent webViewIntent3 = new Intent(getApplicationContext(),
 							WebViewActivity.class);
 					webViewIntent3.putExtra("SOCIAL_URL", "https://dummy-class.herokuapp.com/vidhan_bhavan");

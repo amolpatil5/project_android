@@ -1,27 +1,32 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="6dip"
-    android:background="@android:drawable/list_selector_background"
+    android:background="@android:drawable/picture_frame"
     >
      <ImageView
          android:id="@+id/eventImageView"
          android:layout_width="96dp"
          android:layout_height="96dp"
+         android:layout_marginTop="5dp"
+         android:layout_marginLeft="1dp"
          android:layout_alignParentLeft="true"
          android:layout_alignParentTop="true"
-         android:src="@drawable/ic_launcher" />
+         android:src="@drawable/ic_launcher"
+         android:padding="1dp"
+         android:background="@android:color/black"
+          />
 
      <TextView
          android:id="@+id/eventTitle"  
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
-         android:layout_marginTop="5dp"
+         android:layout_marginTop="2dp"
+          android:layout_marginRight="3dp"
+         android:layout_alignParentTop="true"
          android:layout_toRightOf="@+id/eventImageView"
          android:textStyle="bold"
          android:paddingLeft="5dp"
-         android:text=" eventTitle"
-         android:textSize="16sp" />
+         android:textSize="12sp" />
 
      <TextView
          android:id="@+id/eventDesc"
@@ -30,9 +35,10 @@
          android:layout_below="@+id/eventTitle"
          android:layout_toRightOf="@+id/eventImageView"
          android:paddingLeft="5dp"
-         android:text="eventDesc"
+         android:layout_marginRight="3dp"
+         android:textStyle="italic"
          android:ellipsize="marquee"
-         android:textSize="12sp"
+         android:textSize="13sp"
           />
        
 </RelativeLayout> 

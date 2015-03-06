@@ -78,6 +78,11 @@ public class WebViewActivity extends Activity
 		findViewById(R.id.btnBackHeader).setVisibility(View.VISIBLE);
 		findViewById(R.id.btnHomeHeader).setVisibility(View.GONE);	
 		TextView headerTitle =(TextView)findViewById(R.id.txtHeading);
+
+		if(currentTitle.length()>28)
+		{
+			headerTitle.setTextSize(16);
+		}
 		headerTitle.setText(currentTitle);
 	}
 	public void gotoBack(View v){
