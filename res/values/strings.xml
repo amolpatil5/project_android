@@ -71,5 +71,6 @@ Lohia’s ability to awaken the people with his fiery articles on Satyagraha and
     <string name="title_activity_event_detail">EventDetailActivity</string>
     <string name="VIDHAN_BHAVAN">Vidhan Sabha</string>
     <string name="title_activity_department">Departments</string>
+    <string name ="NETWORK_ERROR">The requested operation failed, please check your internet connection or network signal strength.</string>
 
 </resources>

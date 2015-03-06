@@ -18,6 +18,7 @@ import com.amp.helper.*;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.view.Menu;
@@ -26,6 +27,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Toast;
 
 public class EventsActivity extends Activity 
 {
@@ -38,7 +40,16 @@ public class EventsActivity extends Activity
 		setContentView(R.layout.activity_events);
 		headerSettings();
 		
-		new getEventsDataTask().execute("updates");
+	//	Utility util = new Utility(getApplicationContext());
+		
+		if(Utility.isNetworkStatusAvialable(getApplicationContext()))
+		{
+		  new getEventsDataTask().execute("updates");
+		} else 
+		{
+			Utility.showNetworkConnectionError(this);
+		}
+		
 		values = new ArrayList<EventsData>();
 		
 //		EventsData event1 = new EventsData("This is first event", "28 feb 2015");

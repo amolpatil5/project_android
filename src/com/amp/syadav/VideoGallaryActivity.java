@@ -2,6 +2,8 @@ package com.amp.syadav;
 
 
 
+import com.amp.helper.Utility;
+
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -22,13 +24,25 @@ public class VideoGallaryActivity extends Activity
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_video_gallary);
-		headerSettings();progress = (ProgressBar) findViewById(R.id.videoProgressBar);
+		headerSettings();
+		
+		progress = (ProgressBar) findViewById(R.id.videoProgressBar);
 		progress.setMax(100);
 		
 		webview = (WebView) findViewById(R.id.videoWebView);
 		webview.getSettings().setJavaScriptEnabled(true);
 		webview.setWebViewClient(new VideoWebViewClient());
-		webview.loadUrl("https://www.youtube.com/user/shivpalsinghyad");
+		if(Utility.isNetworkStatusAvialable(getApplicationContext()))
+		{
+			
+			webview.loadUrl("https://www.youtube.com/user/shivpalsinghyad");
+		} else 
+		{
+			Utility.showNetworkConnectionError(this);
+		}
+		
+		
+		
 	}
 	 private class VideoWebViewClient extends WebViewClient{  //HERE IS THE MAIN CHANGE. 
 

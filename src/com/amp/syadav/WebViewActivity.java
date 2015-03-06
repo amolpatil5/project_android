@@ -4,6 +4,9 @@ package com.amp.syadav;
 
 
 
+import com.amp.helper.Utility;
+
+
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -32,20 +35,23 @@ public class WebViewActivity extends Activity
 		socialURL = intent.getStringExtra("SOCIAL_URL");
 		currentTitle= intent.getStringExtra("TITLE");
 		headerSettings();
-		progress = (ProgressBar) findViewById(R.id.progressBar);
-		progress.setMax(100);
-
-
-
-		browser = (WebView) findViewById(R.id.webView);
-		browser.setWebViewClient(new CustomWebViewClient());
-		browser.getSettings().setJavaScriptEnabled(true);
-		if(socialURL != null)
-			browser.loadUrl(socialURL);	
-	}
-
-
-
+		
+		
+		
+		if(Utility.isNetworkStatusAvialable(getApplicationContext()))
+		{
+			progress = (ProgressBar) findViewById(R.id.progressBar);
+			progress.setMax(100);
+			browser = (WebView) findViewById(R.id.webView);
+			browser.setWebViewClient(new CustomWebViewClient());
+			browser.getSettings().setJavaScriptEnabled(true);
+			if(socialURL != null)
+				browser.loadUrl(socialURL);	
+		} else 
+		{
+			Utility.showNetworkConnectionError(this);
+		}
+		}
 	private class CustomWebViewClient extends WebViewClient{  //HERE IS THE MAIN CHANGE. 
 
 		@Override
