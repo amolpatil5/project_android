@@ -9,7 +9,7 @@
         android:targetSdkVersion="17" />
 
     <uses-permission android:name="android.permission.INTERNET" />
-     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -77,8 +77,7 @@
         <activity
             android:name="com.amp.syadav.LauncherImageActivity"
             android:label="@string/title_activity_launcher_image"
-             android:screenOrientation="portrait"
-             >
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -88,13 +87,17 @@
         <activity
             android:name="com.amp.syadav.EventDetailActivity"
             android:label="@string/title_activity_event_detail"
-             android:screenOrientation="portrait" >
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.amp.syadav.DepartmentActivity"
             android:label="@string/title_activity_department"
-             android:screenOrientation="portrait" 
-            >
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.amp.syadav.VidhanSabhaActivity"
+            android:label="@string/title_activity_vidhan_sabha" 
+            android:screenOrientation="portrait">
         </activity>
     </application>
 

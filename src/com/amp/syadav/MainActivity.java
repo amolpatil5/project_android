@@ -127,18 +127,12 @@ public class MainActivity extends Activity
 
 					break;
 				case 9:
-					// Events
-					//					Intent eventsIntent = new Intent(getApplicationContext(),
-					//							EventsActivity.class);
-					//					startActivity(eventsIntent);
+					// Vidhan Sabha
+										Intent vidhanIntent = new Intent(getApplicationContext(),
+												VidhanSabhaActivity.class);
+										startActivity(vidhanIntent);
 
-					Intent webViewIntent3 = new Intent(getApplicationContext(),
-							WebViewActivity.class);
-					webViewIntent3.putExtra("SOCIAL_URL", "https://dummy-class.herokuapp.com/vidhan_bhavan");
-					String actTitle3 =  getResources().getString(R.string.VIDHAN_BHAVAN);
-					webViewIntent3.putExtra("TITLE", actTitle3);
-					startActivity(webViewIntent3);
-					break;
+				break;
 				case 10:
 					// Contact
 					Intent departmentIntent = new Intent(getApplicationContext(),
