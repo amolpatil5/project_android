@@ -1,0 +1,12 @@
+/.bundle
+.gradle/
+.idea/
+build.gradle
+build/
+gradle/
+gradlew
+gradlew.bat
+import-summary.txt
+local.properties
+project_android.iml
+settings.gradle
