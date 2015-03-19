@@ -18,15 +18,23 @@ public class MainActivity extends Activity
 	private Context ctx = null;
 	private GridView Gv = null;
 	private String[] HomeMenu = {"Biography", "Political Career","Samajwadi Party",
-			"Events","In Media","Video Gallary","Social Media","Contact Us","Vidhan Sabha","Departments"};
+			"Events","In Media","Video Gallary","Social Media","Vidhan Sabha","Departments", "Contact Us"};
 
     private String[] colorCodes = {"#d0021b", "#4a90e2","#f5a623",
 			"#bd10e0", "#417505","#d0021b",
 			"#4a90e2", "#f5a623","#bd10e0","#d0021b"};
 
-	private Integer[] HomeMenuResouce = { R.drawable.ic_1,R.drawable.ic_9, R.drawable.ic_5,
-			R.drawable.ic_4,R.drawable.ic_6,
-			R.drawable.ic_8,R.drawable.ic_7, R.drawable.ic_3,R.drawable.ic_6,R.drawable.ic_9};
+	private Integer[] HomeMenuResouce = {
+            R.drawable.ic_1,
+            R.drawable.ic_9,
+            R.drawable.ic_5,
+			R.drawable.ic_4,
+            R.drawable.ic_8,
+			R.drawable.ic_6,
+            R.drawable.ic_7,
+            R.drawable.ic_10,
+            R.drawable.ic_11,
+            R.drawable.ic_3};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -120,21 +128,21 @@ public class MainActivity extends Activity
 
 					break;
 
-				case 7:
+				case 9:
 					// Contact
 					Intent contactIntent = new Intent(getApplicationContext(),
 							ContactActivity.class);
 					startActivity(contactIntent);
 
 					break;
-				case 8:
+				case 7:
 					// Vidhan Sabha
 										Intent vidhanIntent = new Intent(getApplicationContext(),
 												VidhanSabhaActivity.class);
 										startActivity(vidhanIntent);
 
 				break;
-				case 9:
+				case 8:
 					// Contact
 					Intent departmentIntent = new Intent(getApplicationContext(),
 							DepartmentActivity.class);
