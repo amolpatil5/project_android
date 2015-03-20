@@ -8,6 +8,7 @@ import java.util.Arrays;
 import com.amp.helper.DepartmentCellAdapter;
 import com.amp.helper.DepartmentsData;
 import com.amp.helper.EventCellAdaptor;
+import com.twostars.syadav.R;
 
 import android.os.Bundle;
 import android.app.Activity;

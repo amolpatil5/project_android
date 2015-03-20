@@ -5,7 +5,7 @@ import httpimage.HttpImageManager;
 
 import java.util.ArrayList;
 
-import com.amp.syadav.R;
+import com.twostars.syadav.R;
 
 import android.app.Activity;
 import android.content.Context;

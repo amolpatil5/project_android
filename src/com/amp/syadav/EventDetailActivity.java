@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.twostars.syadav.R;
 
 public class EventDetailActivity extends Activity {
 	TextView detailsTxt;

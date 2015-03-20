@@ -35,7 +35,6 @@
                 android:id="@+id/eventDetailImageView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/img_tile"
                 android:background="@android:color/black" 
                 android:padding="1dp"
                  />

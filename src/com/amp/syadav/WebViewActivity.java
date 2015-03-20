@@ -5,6 +5,7 @@ package com.amp.syadav;
 
 
 import com.amp.helper.Utility;
+import com.twostars.syadav.R;
 
 
 import android.app.Activity;
@@ -29,7 +30,7 @@ public class WebViewActivity extends Activity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_web_view);
-		System.out.println("WebViewActivity.onCreate()");
+		
 		//progress.setVisibility(View.GONE);
 		Intent intent = getIntent();
 		socialURL = intent.getStringExtra("SOCIAL_URL");

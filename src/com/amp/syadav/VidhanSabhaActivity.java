@@ -7,6 +7,7 @@ import java.util.List;
 
 import com.amp.helper.DepartmentCellAdapter;
 import com.amp.helper.VidhanSabhaCellAdapter;
+import com.twostars.syadav.R;
 
 import android.os.Bundle;
 import android.app.Activity;

@@ -2,7 +2,7 @@ package com.amp.helper;
 
 import java.util.ArrayList;
 
-import com.amp.syadav.R;
+import com.twostars.syadav.R;
 
 import android.content.Context;
 import android.view.LayoutInflater;

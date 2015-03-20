@@ -3,6 +3,7 @@ package com.amp.syadav;
 
 
 import com.amp.helper.Utility;
+import com.twostars.syadav.R;
 
 import android.app.Activity;
 import android.graphics.Bitmap;

@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
+import com.twostars.syadav.R;
 
 public class SocialMediaActivity extends Activity
 {
@@ -19,7 +20,7 @@ public class SocialMediaActivity extends Activity
 	private String[] HomeMenu = {"Facebook", "Google Plus","Twitter"};
 	private String[] colorCodes = {"#3b5998", "#dd4b39","#00aced"};
 	
-	private Integer[] HomeMenuResouce = { R.drawable.ic_launcher,R.drawable.ic_launcher, R.drawable.ic_launcher};
+	private Integer[] HomeMenuResouce = { R.drawable.facebook_icon,R.drawable.google_icon, R.drawable.twitter_icon};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

@@ -2,16 +2,35 @@ package com.amp.syadav;
 
 
 
+import java.io.IOException;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
+import org.json.JSONException;
+import org.json.JSONObject;
+import com.amp.helper.Constants;
+import com.amp.helper.Utility;
+import com.twostars.syadav.R;
+import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
+
 
 public class MainActivity extends Activity 
 {
@@ -26,7 +45,7 @@ public class MainActivity extends Activity
 
 	private Integer[] HomeMenuResouce = {
             R.drawable.ic_1,
-            R.drawable.ic_9,
+		    R.drawable.ic_9,
             R.drawable.ic_5,
 			R.drawable.ic_4,
             R.drawable.ic_8,
@@ -34,7 +53,9 @@ public class MainActivity extends Activity
             R.drawable.ic_7,
             R.drawable.ic_10,
             R.drawable.ic_11,
-            R.drawable.ic_3};
+            R.drawable.ic_3,
+           
+            };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +63,11 @@ public class MainActivity extends Activity
 		setContentView(R.layout.activity_main);
 		ctx = this;
 		headerSettings();
+		
+		if(Utility.isNetworkStatusAvialable(getApplicationContext()))
+		{
+		  new getUpgradeTask().execute("updates");
+		} 
 
 		Gv = (GridView) findViewById(R.id.gridHome);
 		Gv.setAdapter(new MenuGridNewAdaptor(MainActivity.this,
@@ -51,8 +77,7 @@ public class MainActivity extends Activity
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1,
 					final int position, long arg3) {
-				System.out.println("Position = " + position);
-
+				
 				switch (position) {
 				case 0:
 					// BioGraphy
@@ -81,24 +106,8 @@ public class MainActivity extends Activity
 					Intent eventsIntent = new Intent(getApplicationContext(),
 							EventsActivity.class);
 					startActivity(eventsIntent);
-
-					//					Intent webViewIntent = new Intent(getApplicationContext(),
-					//							WebViewActivity.class);
-					//					webViewIntent.putExtra("SOCIAL_URL", "https://dummy-class.herokuapp.com/events_list");
-					//					String actTitle =  getResources().getString(R.string.title_activity_events);
-					//					webViewIntent.putExtra("TITLE", actTitle);
-					//					startActivity(webViewIntent);
-					//					
-
-
 					break;
 				case 4:
-
-					// inMedia
-					//					Intent inMediaIntent = new Intent(getApplicationContext(),
-					//							MediaActivity.class);
-					//					startActivity(inMediaIntent);
-
 					Intent webViewIntent1 = new Intent(getApplicationContext(),
 							WebViewActivity.class);
 					webViewIntent1.putExtra("SOCIAL_URL", "http://dummy-class.herokuapp.com/media");
@@ -106,13 +115,6 @@ public class MainActivity extends Activity
 					webViewIntent1.putExtra("TITLE", actTitle1);
 					startActivity(webViewIntent1);
 					break;
-//				case 5:
-//					// PhotoGallary
-//					Intent photoGallaryIntent = new Intent(getApplicationContext(),
-//							PhotoGallaryActivity.class);
-//					startActivity(photoGallaryIntent);
-//
-//					break;
 				case 5:
 					// Video
 					Intent videoGallaryIntent = new Intent(getApplicationContext(),
@@ -155,8 +157,14 @@ public class MainActivity extends Activity
 				}
 			}
 		});
-
-	}
+	} 
+    public void goToUpgrade()
+    {  
+    	Intent intent = new Intent(Intent.ACTION_VIEW);
+    	intent.setData(Uri.parse("market://details?id="+getApplicationContext().getPackageName()));
+    	startActivity(intent);
+    }  
+  
 	private void headerSettings() {
 		findViewById(R.id.btnBackHeader).setVisibility(View.GONE);
 		findViewById(R.id.btnHomeHeader).setVisibility(View.VISIBLE);	
@@ -176,4 +184,85 @@ public class MainActivity extends Activity
 		i.putExtra(android.content.Intent.EXTRA_TEXT, "To read more information Please visit http://shivpalsinghyadav.com/");
 		startActivity(Intent.createChooser(i,"Share via"));
 	}
+	
+	private class getUpgradeTask extends AsyncTask<String, Void, String> {
+		
+  @Override
+  protected String doInBackground(String... params)
+  {
+  	HttpClient httpclient = new DefaultHttpClient();
+      HttpGet httppost;
+	try {
+		httppost = new HttpGet(Constants.UPGRADE_URL + "?current_version="+Utility.getAppVersion(getApplicationContext()));
+	
+          // Execute HTTP Post Request
+          HttpResponse response = httpclient.execute(httppost);
+          String content = EntityUtils.toString(response.getEntity());
+          System.out.println("Content = "+content);
+          return content;
+      } catch (ClientProtocolException e) {
+          // TODO Auto-generated catch block
+      } catch (IOException e) {
+          // TODO Auto-generated catch block
+      } catch (NameNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+      return null;
+  }
+
+  @Override
+  protected void onPostExecute(String result) 
+  {
+  	// dialog.dismiss();
+	 
+			 JSONObject objJSONObject;
+			try {
+				objJSONObject = new JSONObject(result);
+				 System.out.println("objJSONObject = "+objJSONObject.toString());
+				
+				 boolean isUpgradeRequired = (Boolean) objJSONObject.get("flag");
+				 if(isUpgradeRequired)
+				 {
+						AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+			            builder.setCancelable(true);
+			            builder.setTitle("Upgrade Message");
+			            builder.setMessage("A New Version of Application is available.To download click on Upgrade. Thank you.");
+			            builder.setInverseBackgroundForced(true);
+			            builder.setPositiveButton("Upgrade", new DialogInterface.OnClickListener() {
+			                public void onClick(DialogInterface dialog, int id)
+			                {
+			                	goToUpgrade();
+			                }});
+			            builder.setNegativeButton("Cancel",new DialogInterface.OnClickListener() {
+			                public void onClick(DialogInterface dialog, int id) {
+			                    dialog.cancel();
+			                }
+			            });
+			            AlertDialog alert = builder.create();
+			            alert.show();
+				 }
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			 
+			
+  }
+
+
+  @Override
+  protected void onPreExecute() {
+//      dialog = new ProgressDialog(MainActivity.this);
+//      dialog.setMessage("Please Wait..");
+//      dialog.setIndeterminate(true);
+//      dialog.setCancelable(false);
+//      dialog.show();
+  }
+
+  @Override
+  protected void onProgressUpdate(Void... values) {
+  }
+}
+
 }

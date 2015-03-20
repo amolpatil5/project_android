@@ -13,6 +13,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import com.amp.helper.*;
+import com.twostars.syadav.R;
 
 
 import android.os.AsyncTask;
@@ -105,7 +106,7 @@ public class EventsActivity extends Activity
 	}
 	public void refreshEventsUI(String results) throws JSONException 
 	{
-	System.out.println("getEventsDataList.refreshUpdatesUI()");	
+	
 	ArrayList<EventsData> respSchData = getEventsDataList(results);
 	this.values.addAll(respSchData);
 	adap.notifyDataSetChanged();
@@ -122,9 +123,9 @@ public class EventsActivity extends Activity
         {
             // Execute HTTP Post Request
             HttpResponse response = httpclient.execute(httppost);
-            System.out.println("Response :"+response.toString());
+          
             String content = EntityUtils.toString(response.getEntity());
-            System.out.println("Content :"+content);
+          
             return content;
         } catch (ClientProtocolException e) {
             // TODO Auto-generated catch block
@@ -169,7 +170,7 @@ public class EventsActivity extends Activity
 		 ArrayList<EventsData> toReturnList = new ArrayList<EventsData>();
 		 JSONObject objJSONObject  =  new JSONObject(result);
 		 
-		 System.out.println("objJSONObject = "+objJSONObject.toString());
+		
 		 JSONArray jsonObjectArr =  objJSONObject.getJSONArray("events");
 	       
 		for(int i = 0, count = jsonObjectArr.length(); i< count; i++)

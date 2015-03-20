@@ -12,6 +12,7 @@ import android.widget.BaseAdapter;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.twostars.syadav.R;
 
 public class MenuGridNewAdaptor extends BaseAdapter {
 	private Integer[] menuarr = null;
