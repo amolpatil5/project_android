@@ -34,16 +34,16 @@ public class DepartmentActivity extends Activity
 		headerSettings();
 		departmentList = new ArrayList<DepartmentsData>();
 		
-		DepartmentsData dep1 = new DepartmentsData("Public Works Department","http://uppwd.up.nic.in");
-		DepartmentsData dep2 = new DepartmentsData("Irrigation","http://irrigation.up.nic.in/");
-		DepartmentsData dep3 = new DepartmentsData("Co-operative","http://www.uppcf.org");
-		DepartmentsData dep4 = new DepartmentsData("Land Development & Water Resources","http://uppwd.up.nic.in");
-		DepartmentsData dep5 = new DepartmentsData("Flood Control","");
-		DepartmentsData dep6 = new DepartmentsData("Waste Land Development","");
-		DepartmentsData dep7 = new DepartmentsData("Irrigation (Mechanical)","");
-		DepartmentsData dep8 = new DepartmentsData("Revenue","");
-		DepartmentsData dep9 = new DepartmentsData("Disaster & Rehabilitation","");
-		DepartmentsData dep10 = new DepartmentsData("Public Service Management","");
+		DepartmentsData dep1 = new DepartmentsData("Public Works Department","http://uppwd.up.nic.in","#4a90e2");
+		DepartmentsData dep2 = new DepartmentsData("Irrigation","http://irrigation.up.nic.in/","#4a90e2");
+		DepartmentsData dep3 = new DepartmentsData("Co-operative","http://www.uppcf.org","#4a90e2");
+		DepartmentsData dep4 = new DepartmentsData("Land Development & Water Resources","http://uppwd.up.nic.in","#4a90e2");
+		DepartmentsData dep5 = new DepartmentsData("Flood Control","","#ffffff");
+		DepartmentsData dep6 = new DepartmentsData("Waste Land Development","","#ffffff");
+		DepartmentsData dep7 = new DepartmentsData("Irrigation (Mechanical)","","#ffffff");
+		DepartmentsData dep8 = new DepartmentsData("Revenue","","#ffffff");
+		DepartmentsData dep9 = new DepartmentsData("Disaster & Rehabilitation","","#ffffff");
+		DepartmentsData dep10 = new DepartmentsData("Public Service Management","","#ffffff");
 		
 		departmentList.add(dep1);
 		departmentList.add(dep2);

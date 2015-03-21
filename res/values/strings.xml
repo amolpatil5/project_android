@@ -75,8 +75,8 @@ Lohia’s ability to awaken the people with his fiery articles on Satyagraha and
     <string name="title_activity_vidhan_sabha">Vidhan Sabha</string>
     
     <string name="Vidhan_Sabha_Area">Jaswant Nagar (199)</string>
-    
-    
+     <string name="PARTY_WEBSITE_TITLE">Website:</string>
+    <string name="PARTY_WEBSITE_URL">http://www.samajwadiparty.in</string>
     
 
     <string-array name="VidhanSabhaPartNames">

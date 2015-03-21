@@ -25,9 +25,11 @@
         android:layout_below="@id/headImageView"
         android:gravity="center_vertical"
         android:horizontalSpacing="5dp"
-        android:listSelector="@android:color/transparent"
+        android:listSelector="#552266"
+      
         android:numColumns="3"
         android:scrollbars="none"
+      
         android:verticalSpacing="5dp" />
 
     <ImageView

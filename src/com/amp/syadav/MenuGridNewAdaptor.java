@@ -46,6 +46,7 @@ public class MenuGridNewAdaptor extends BaseAdapter {
 			txt.setText(ContentDesc[position]);
 			
 			convertView.setBackgroundColor(Color.parseColor(colorCode[position]));
+			
 
 //		} else {
 //			convertView = (FrameLayout) convertView;

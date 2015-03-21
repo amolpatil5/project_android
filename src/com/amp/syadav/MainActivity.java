@@ -19,14 +19,18 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.graphics.Color;
 import android.view.Menu;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -36,6 +40,7 @@ public class MainActivity extends Activity
 {
 	private Context ctx = null;
 	private GridView Gv = null;
+	 Dialog dialog;
 	private String[] HomeMenu = {"Biography", "Political Career","Samajwadi Party",
 			"Events","In Media","Video Gallary","Social Media","Vidhan Sabha","Departments", "Contact Us"};
 
@@ -158,12 +163,17 @@ public class MainActivity extends Activity
 			}
 		});
 	} 
-    public void goToUpgrade()
+    public void upgradeBtnClicked(View v)
     {  
     	Intent intent = new Intent(Intent.ACTION_VIEW);
     	intent.setData(Uri.parse("market://details?id="+getApplicationContext().getPackageName()));
     	startActivity(intent);
+    	dialog.dismiss();
     }  
+    public void cancelBtnClicked(View v)
+    {  
+    dialog.dismiss();
+    } 
   
 	private void headerSettings() {
 		findViewById(R.id.btnBackHeader).setVisibility(View.GONE);
@@ -224,29 +234,70 @@ public class MainActivity extends Activity
 				 boolean isUpgradeRequired = (Boolean) objJSONObject.get("flag");
 				 if(isUpgradeRequired)
 				 {
-						AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-			            builder.setCancelable(true);
-			            builder.setTitle("Upgrade Message");
-			            builder.setMessage("A New Version of Application is available.To download click on Upgrade. Thank you.");
-			            builder.setInverseBackgroundForced(true);
-			            builder.setPositiveButton("Upgrade", new DialogInterface.OnClickListener() {
-			                public void onClick(DialogInterface dialog, int id)
-			                {
-			                	goToUpgrade();
-			                }});
-			            builder.setNegativeButton("Cancel",new DialogInterface.OnClickListener() {
-			                public void onClick(DialogInterface dialog, int id) {
-			                    dialog.cancel();
-			                }
-			            });
-			            AlertDialog alert = builder.create();
-			            alert.show();
-				 }
-			} catch (JSONException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+					 
+					dialog = new  Dialog(MainActivity.this);
+					 
+		                //tell the Dialog to use the dialog.xml as it's layout description
+		                dialog.setContentView(R.layout.custom_dialog);
+		                dialog.setTitle("Upgrade Message");
+		                
+		              
+		                TextView txt = (TextView) dialog.findViewById(R.id.txt);
+		 
+		                txt.setText("A New Version of Application is available.To download click on Upgrade. Thank you.");
+	 
+		                Button upgradeBtn = (Button) dialog.findViewById(R.id.upgradeButton);
+//		 
+		                upgradeBtn.setOnClickListener(new OnClickListener() {
+		                    @Override
+		                    public void onClick(View v) {
+		                        upgradeBtnClicked(v);
+		                    }
+		                });
+		                Button cancelBtn = (Button) dialog.findViewById(R.id.cancelButton);
+//		       		 
+		                cancelBtn.setOnClickListener(new OnClickListener() {
+		       		                    @Override
+		       		                    public void onClick(View v) {
+		       		                        dialog.cancel();
+		       		                    }
+		       		                });
+//		 
+		                dialog.show();
+		            }
+					 
+					 
+//						AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+//			            builder.setCancelable(true);
+//			            builder.setIcon(R.drawable.ic_launcher);
+//			            builder.setTitle("Upgrade Message");
+//			          
+//			            builder.setMessage("A New Version of Application is available.To download click on Upgrade. Thank you.");
+//			            builder.setInverseBackgroundForced(true);
+//			            builder.setPositiveButton("Upgrade", new DialogInterface.OnClickListener() {
+//			                public void onClick(DialogInterface dialog, int id)
+//			                {
+//			                	goToUpgrade();
+//			                }});
+//			            builder.setNegativeButton("Cancel",new DialogInterface.OnClickListener() {
+//			                public void onClick(DialogInterface dialog, int id) {
+//			                    dialog.cancel();
+//			                }
+//			            });
+//			            AlertDialog alert = builder.create();		            
+//			            alert.show();
+//			            
+//			            Button negativeBtn = alert.getButton(DialogInterface.BUTTON_NEGATIVE);  
+//			            negativeBtn.setBackgroundColor(Color.BLUE);
+//			            Button positiveBtn = alert.getButton(DialogInterface.BUTTON_NEGATIVE);  
+//			            negativeBtn.setBackgroundColor(Color.BLUE);
+//				 }
+			} catch (JSONException e) 
+			{
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
 			}
-			 
+//			 
 			
   }
 
