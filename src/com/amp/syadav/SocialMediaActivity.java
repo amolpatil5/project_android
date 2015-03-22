@@ -1,21 +1,16 @@
 package com.amp.syadav;
 
 import android.os.Bundle;
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
-import android.view.Menu;
+
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.GridView;
 import android.widget.TextView;
-import android.widget.AdapterView.OnItemClickListener;
+
 import com.twostars.syadav.R;
 
 public class SocialMediaActivity extends FragmentActivity 
@@ -30,7 +25,10 @@ public class SocialMediaActivity extends FragmentActivity
         ViewPager vpPager = (ViewPager) findViewById(R.id.vpPager);
         adapterViewPager = new MyPagerAdapter(getSupportFragmentManager());
         vpPager.setAdapter(adapterViewPager);
-        vpPager.setOnPageChangeListener(new OnPageChangeListener() {
+        vpPager.setOffscreenPageLimit(2);
+        vpPager.setOnPageChangeListener(new OnPageChangeListener()
+        
+        {
 
             // This method will be invoked when a new page becomes selected.
             @Override
@@ -77,7 +75,7 @@ public class SocialMediaActivity extends FragmentActivity
 		                return SocialFragment.newInstance("https://plus.google.com/+Shivpalsinghyadavorg#+Shivpalsinghyadavorg/posts");
 		            case 2:
 		            	// Twitter
-		                return SocialTwitterFragment.newInstance("https://twitter.com/shivpalsinghyad");
+		                return SocialFragment.newInstance("https://twitter.com/shivpalsinghyad");
 //		            case 3:
 //		            	// YouTube
 //		                return SocialFragment.newInstance("https://www.youtube.com/user/shivpalsinghyad");
