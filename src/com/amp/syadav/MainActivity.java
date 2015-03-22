@@ -42,7 +42,7 @@ public class MainActivity extends Activity
 	private GridView Gv = null;
 	 Dialog dialog;
 	private String[] HomeMenu = {"Biography", "Political Career","Samajwadi Party",
-			"Events","In Media","Video Gallary","Social Media","Vidhan Sabha","Departments", "Contact Us"};
+			"Events","In Media","Video Gallary","Social Media","Constituency","Departments", "Contact Us"};
 
     private String[] colorCodes = {"#d0021b", "#4a90e2","#f5a623",
 			"#bd10e0", "#417505","#d0021b",

@@ -2,6 +2,7 @@ package com.amp.syadav;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
@@ -30,5 +31,19 @@ public class BiographyActivity extends Activity {
 	}
 	public void gotoBack(View v){
 		finish();
+	}
+	
+	
+	
+	public void personalURLClicked(View v)
+	{
+		TextView txtView= (TextView)v;
+		Intent webViewIntent1 = new Intent(getApplicationContext(),
+				WebViewActivity.class);
+		webViewIntent1.putExtra("SOCIAL_URL", txtView.getText());
+		String actTitle1 =  getResources().getString(R.string.title_activity_biography);
+		webViewIntent1.putExtra("TITLE", actTitle1);
+
+		startActivity(webViewIntent1);
 	}
 }

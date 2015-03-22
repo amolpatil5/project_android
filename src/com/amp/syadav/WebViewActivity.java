@@ -88,7 +88,7 @@ public class WebViewActivity extends Activity
 
 		if(currentTitle.length()>28)
 		{
-			headerTitle.setTextSize(16);
+			headerTitle.setTextSize(14);
 		}
 		headerTitle.setText(currentTitle);
 	}

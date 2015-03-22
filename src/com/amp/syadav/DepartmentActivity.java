@@ -34,17 +34,19 @@ public class DepartmentActivity extends Activity
 		headerSettings();
 		departmentList = new ArrayList<DepartmentsData>();
 		
-		DepartmentsData dep1 = new DepartmentsData("Public Works Department","http://uppwd.up.nic.in","#4a90e2");
+		DepartmentsData dep1 = new DepartmentsData("Public Works Department","http://uppwd.up.nic.in/","#4a90e2");  
 		DepartmentsData dep2 = new DepartmentsData("Irrigation","http://irrigation.up.nic.in/","#4a90e2");
-		DepartmentsData dep3 = new DepartmentsData("Co-operative","http://www.uppcf.org","#4a90e2");
-		DepartmentsData dep4 = new DepartmentsData("Land Development & Water Resources","http://uppwd.up.nic.in","#4a90e2");
-		DepartmentsData dep5 = new DepartmentsData("Flood Control","","#ffffff");
-		DepartmentsData dep6 = new DepartmentsData("Waste Land Development","","#ffffff");
-		DepartmentsData dep7 = new DepartmentsData("Irrigation (Mechanical)","","#ffffff");
-		DepartmentsData dep8 = new DepartmentsData("Revenue","","#ffffff");
-		DepartmentsData dep9 = new DepartmentsData("Disaster & Rehabilitation","","#ffffff");
-		DepartmentsData dep10 = new DepartmentsData("Public Service Management","","#ffffff");
-		
+		DepartmentsData dep3 = new DepartmentsData("Co-operative","http://cooperative.up.nic.in/","#4a90e2");
+		DepartmentsData dep4 = new DepartmentsData("Land Development & Water Resources","http://upldwr.up.nic.in/","#4a90e2");
+		DepartmentsData dep5 = new DepartmentsData("Flood Control","http://irrigation.up.nic.in/","#4a90e2");
+		DepartmentsData dep6 = new DepartmentsData("Irrigation (Mechanical)","http://irrigation.up.nic.in/","#4a90e2");
+		DepartmentsData dep7 = new DepartmentsData("Revenue","http://revenue.up.nic.in/","#4a90e2");
+		DepartmentsData dep8 = new DepartmentsData("Uttar Pradesh Cooperative Federation Limited","http://uppcf.org/","#4a90e2");
+		DepartmentsData dep9 = new DepartmentsData("Sodic &Ravine Land development","http://upldwr.up.nic.in/","#4a90e2");
+		DepartmentsData dep10 = new DepartmentsData("Waste Land Development","","#ffffff");
+		DepartmentsData dep11= new DepartmentsData("Disaster & Rehabilitation","","#ffffff");
+		DepartmentsData dep12 = new DepartmentsData("Public Service Management","","#ffffff");
+
 		departmentList.add(dep1);
 		departmentList.add(dep2);
 		departmentList.add(dep3);
@@ -55,6 +57,8 @@ public class DepartmentActivity extends Activity
 		departmentList.add(dep8);
 		departmentList.add(dep9);
 		departmentList.add(dep10);
+		departmentList.add(dep11);
+		departmentList.add(dep12);
 		
 		 deptListViewView = (ListView) findViewById(R.id.departmentListView);
 		DepartmentCellAdapter adapter  = new DepartmentCellAdapter(this, departmentList);

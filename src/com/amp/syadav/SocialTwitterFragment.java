@@ -2,10 +2,6 @@ package com.amp.syadav;
 
 import java.lang.reflect.InvocationTargetException;
 
-import com.amp.helper.Utility;
-
-import com.twostars.syadav.R;
-
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -15,9 +11,11 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 
-public class SocialFragment extends Fragment {
+import com.amp.helper.Utility;
+import com.twostars.syadav.R;
+
+public class SocialTwitterFragment extends Fragment {
 	// Store instance variables
 
 	WebView browser;
@@ -26,8 +24,8 @@ public class SocialFragment extends Fragment {
 
 
 	// newInstance constructor for creating fragment with arguments
-	public static SocialFragment newInstance(String socialURL) {
-		SocialFragment fragmentFirst = new SocialFragment();
+	public static SocialTwitterFragment newInstance(String socialURL) {
+		SocialTwitterFragment fragmentFirst = new SocialTwitterFragment();
 		Bundle args = new Bundle();
 
 		args.putString("SOCIAL_URL", socialURL);
@@ -46,8 +44,8 @@ public class SocialFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, 
 			Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.social_fragment, container, false);
-		browser = (WebView) view.findViewById(R.id.socialWebView);
+		View view = inflater.inflate(R.layout.social_twitter_fragment, container, false);
+		browser = (WebView) view.findViewById(R.id.socialTwitterWebView);
 		//tvLabel.setText(page + " -- " + title);
 		if(Utility.isNetworkStatusAvialable(getActivity()))
 		{

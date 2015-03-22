@@ -35,7 +35,6 @@ public class VideoGallaryActivity extends Activity
 		webview.setWebViewClient(new VideoWebViewClient());
 		if(Utility.isNetworkStatusAvialable(getApplicationContext()))
 		{
-			
 			webview.loadUrl("https://www.youtube.com/user/shivpalsinghyad");
 		} else 
 		{

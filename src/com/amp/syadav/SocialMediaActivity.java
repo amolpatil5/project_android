@@ -34,11 +34,14 @@ public class SocialMediaActivity extends FragmentActivity
 
             // This method will be invoked when a new page becomes selected.
             @Override
-            public void onPageSelected(int position) {
+            public void onPageSelected(int position) 
+            {
+            	
             }
             // This method will be invoked when the current page is scrolled
             @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) 
+            {
                 // Code goes here
             }
 
@@ -74,7 +77,10 @@ public class SocialMediaActivity extends FragmentActivity
 		                return SocialFragment.newInstance("https://plus.google.com/+Shivpalsinghyadavorg#+Shivpalsinghyadavorg/posts");
 		            case 2:
 		            	// Twitter
-		                return SocialFragment.newInstance("https://twitter.com/shivpalsinghyad");
+		                return SocialTwitterFragment.newInstance("https://twitter.com/shivpalsinghyad");
+//		            case 3:
+//		            	// YouTube
+//		                return SocialFragment.newInstance("https://www.youtube.com/user/shivpalsinghyad");
 		            default:
 		                return null;
 		            }
@@ -92,6 +98,9 @@ public class SocialMediaActivity extends FragmentActivity
 						return "Google Plus";
 					case 2:
 						return "Twitter";
+//					case 3:
+//						return "Youtube";
+//						
 					default:
 						break;
 					}
@@ -109,6 +118,7 @@ public class SocialMediaActivity extends FragmentActivity
 		}
 		public void gotoBack(View v){
 			finish();
+			
 		}
 		
 	
