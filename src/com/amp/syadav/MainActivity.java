@@ -3,6 +3,8 @@ package com.amp.syadav;
 
 
 import java.io.IOException;
+import java.util.Locale;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
@@ -40,9 +42,11 @@ public class MainActivity extends Activity
 {
 	private Context ctx = null;
 	private GridView Gv = null;
-	 Dialog dialog;
-	private String[] HomeMenu = {"Biography", "Political Career","Samajwadi Party",
-			"Events","In Media","Video Gallary","Social Media","Constituency","Departments", "Contact Us"};
+	 Dialog dialog; 
+	private String[] HomeMenu ;
+		
+		//{getText(R.string.title_activity_biography), "Political Career","Samajwadi Party",
+		//	"Events","In Media","Video Gallary","Social Media","Constituency","Departments", "Contact Us"};
 
     private String[] colorCodes = {"#d0021b", "#4a90e2","#f5a623",
 			"#bd10e0", "#417505","#d0021b",
@@ -68,6 +72,18 @@ public class MainActivity extends Activity
 		setContentView(R.layout.activity_main);
 		ctx = this;
 		headerSettings();
+		//HomeMenu=  getResources().getStringArray(R.array.TileNames);
+		HomeMenu=new String[]{getResources().getString(R.string.title_activity_biography),
+				getResources().getString(R.string.title_activity_political_career),
+				getResources().getString(R.string.title_activity_samajwadi_party),
+				getResources().getString(R.string.title_activity_events),
+				getResources().getString(R.string.title_activity_media),
+				getResources().getString(R.string.title_activity_video_gallary),
+				getResources().getString(R.string.title_activity_social_media),
+				getResources().getString(R.string.title_activity_vidhan_sabha),
+				getResources().getString(R.string.title_activity_department),
+				getResources().getString(R.string.title_activity_contact)};
+
 		
 		if(Utility.isNetworkStatusAvialable(getApplicationContext()))
 		{
@@ -174,10 +190,27 @@ public class MainActivity extends Activity
     {  
     dialog.dismiss();
     } 
+    
+    public void changeLanguage(View v)
+    {
+    	Locale currentLocale = getResources().getConfiguration().locale;
+    	
+    	if(currentLocale.getLanguage().equalsIgnoreCase("en"))
+    	{
+    		Utility.updateLocaleWithLanguage(MainActivity.this, "hi-IN");
+    	}
+    	else
+    	{
+    		Utility.updateLocaleWithLanguage(MainActivity.this, "en");
+    	}
+    	
+    }
   
 	private void headerSettings() {
 		findViewById(R.id.btnBackHeader).setVisibility(View.GONE);
-		findViewById(R.id.btnHomeHeader).setVisibility(View.VISIBLE);	
+		findViewById(R.id.btnHomeHeader).setVisibility(View.VISIBLE);
+		findViewById(R.id.btnLangHeader).setVisibility(View.VISIBLE);
+		
 		TextView headerTitle =(TextView)findViewById(R.id.txtHeading);
 		headerTitle.setText(R.string.app_name);
 	}
@@ -193,6 +226,7 @@ public class MainActivity extends Activity
 		i.putExtra(android.content.Intent.EXTRA_SUBJECT,"Shivpal Singh Yadav");
 		i.putExtra(android.content.Intent.EXTRA_TEXT, "To read more information Please visit http://shivpalsinghyadav.com/");
 		startActivity(Intent.createChooser(i,"Share via"));
+		
 	}
 	
 	private class getUpgradeTask extends AsyncTask<String, Void, String> {
@@ -246,8 +280,7 @@ public class MainActivity extends Activity
 		 
 		                txt.setText("A New Version of Application is available.To download click on Upgrade. Thank you.");
 	 
-		                Button upgradeBtn = (Button) dialog.findViewById(R.id.upgradeButton);
-//		 
+		                Button upgradeBtn = (Button) dialog.findViewById(R.id.upgradeButton);		 
 		                upgradeBtn.setOnClickListener(new OnClickListener() {
 		                    @Override
 		                    public void onClick(View v) {
@@ -265,50 +298,16 @@ public class MainActivity extends Activity
 //		 
 		                dialog.show();
 		            }
-					 
-					 
-//						AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-//			            builder.setCancelable(true);
-//			            builder.setIcon(R.drawable.ic_launcher);
-//			            builder.setTitle("Upgrade Message");
-//			          
-//			            builder.setMessage("A New Version of Application is available.To download click on Upgrade. Thank you.");
-//			            builder.setInverseBackgroundForced(true);
-//			            builder.setPositiveButton("Upgrade", new DialogInterface.OnClickListener() {
-//			                public void onClick(DialogInterface dialog, int id)
-//			                {
-//			                	goToUpgrade();
-//			                }});
-//			            builder.setNegativeButton("Cancel",new DialogInterface.OnClickListener() {
-//			                public void onClick(DialogInterface dialog, int id) {
-//			                    dialog.cancel();
-//			                }
-//			            });
-//			            AlertDialog alert = builder.create();		            
-//			            alert.show();
-//			            
-//			            Button negativeBtn = alert.getButton(DialogInterface.BUTTON_NEGATIVE);  
-//			            negativeBtn.setBackgroundColor(Color.BLUE);
-//			            Button positiveBtn = alert.getButton(DialogInterface.BUTTON_NEGATIVE);  
-//			            negativeBtn.setBackgroundColor(Color.BLUE);
-//				 }
 			} catch (JSONException e) 
 			{
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-			}
-//			 
-			
+			e.printStackTrace();
+			}			 
   }
 
 
   @Override
   protected void onPreExecute() {
-//      dialog = new ProgressDialog(MainActivity.this);
-//      dialog.setMessage("Please Wait..");
-//      dialog.setIndeterminate(true);
-//      dialog.setCancelable(false);
-//      dialog.show();
+
   }
 
   @Override

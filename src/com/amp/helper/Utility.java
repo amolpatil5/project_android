@@ -1,5 +1,7 @@
 package com.amp.helper;
 
+import java.util.Locale;
+
 import com.twostars.syadav.R;
 
 import android.app.AlertDialog;
@@ -8,8 +10,10 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.res.Resources;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.util.DisplayMetrics;
 
 
 
@@ -71,4 +75,17 @@ public class Utility
 		alert.show();
 
 	}
+	
+	public static void updateLocaleWithLanguage(final Context context, String language_code)
+	{
+		Resources res = context.getResources();
+	    // Change locale settings in the app.
+	    DisplayMetrics dm = res.getDisplayMetrics();
+	    android.content.res.Configuration conf = res.getConfiguration();
+	    conf.locale = new Locale(language_code.toLowerCase());
+	    res.updateConfiguration(conf, dm);
+	}
+
+	
+	
 }
