@@ -118,7 +118,9 @@ public class EventsActivity extends Activity
     protected String doInBackground(String... params)
     {
     	HttpClient httpclient = new DefaultHttpClient();
-        HttpGet httppost = new HttpGet(Constants.GET_EVENTS_DATA_URL);
+    	
+    	
+        HttpGet httppost = new HttpGet(getResources().getString(R.string.GET_EVENTS_DATA_URL));
         try 
         {
             // Execute HTTP Post Request

@@ -8,6 +8,8 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -45,8 +47,8 @@ public class MenuGridNewAdaptor extends BaseAdapter {
 			txt = (TextView) convertView.findViewById(R.id.txtSelectorText);
 			txt.setText(ContentDesc[position]);
 			
-			convertView.setBackgroundColor(Color.parseColor(colorCode[position]));
-			
+		convertView.setBackgroundColor(Color.parseColor(colorCode[position]));
+		
 
 //		} else {
 //			convertView = (FrameLayout) convertView;

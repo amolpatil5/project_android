@@ -1,5 +1,6 @@
 package com.amp.syadav;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -16,12 +17,13 @@ import com.twostars.syadav.R;
 public class SocialMediaActivity extends FragmentActivity 
 {
     FragmentPagerAdapter adapterViewPager;
-
+    static Context ctx= null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_social_media);
         headerSettings();
+        ctx = this;
         ViewPager vpPager = (ViewPager) findViewById(R.id.vpPager);
         adapterViewPager = new MyPagerAdapter(getSupportFragmentManager());
         vpPager.setAdapter(adapterViewPager);
@@ -91,11 +93,11 @@ public class SocialMediaActivity extends FragmentActivity
 		        	
 		        	switch (position) {
 					case 0:
-						return "Facebook";
+						return ctx.getResources().getString(R.string.FACEBOOK_TITLE);
 					case 1:
-						return "Google Plus";
+						return ctx.getResources().getString(R.string.GOOGLE_PLUS_TITLE);
 					case 2:
-						return "Twitter";
+						return ctx.getResources().getString(R.string.TWITTER_TITLE);
 //					case 3:
 //						return "Youtube";
 //						

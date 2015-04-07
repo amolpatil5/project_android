@@ -5,6 +5,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
+
+import com.amp.helper.Utility;
 import com.twostars.syadav.R;
 
 public class LauncherImageActivity extends Activity {
@@ -21,9 +23,20 @@ public class LauncherImageActivity extends Activity {
 //		getMenuInflater().inflate(R.menu.launcher_image, menu);
 		return true;
 	}
-	public void gotoNext(View v){
+	public void gotoNext(){
 		Intent mainIntent = new Intent(getApplicationContext(),
 				MainActivity.class);
 		startActivity(mainIntent);
+	}
+	
+	public void englishBtnClicked(View v)
+	{
+		Utility.updateLocaleWithLanguage(LauncherImageActivity.this, "en");
+		gotoNext();
+	}
+	public void hindiBtnClicked(View v)
+	{
+		Utility.updateLocaleWithLanguage(LauncherImageActivity.this, "hi");
+		gotoNext();
 	}
 }

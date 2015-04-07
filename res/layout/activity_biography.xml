@@ -45,7 +45,7 @@
                 android:paddingLeft="10dp"
                 android:text="@string/PARTY_WEBSITE_TITLE"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/personalWebsite"
@@ -69,7 +69,7 @@
                 android:paddingLeft="10dp"
                 android:text="@string/Birth"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/birthInfo"
@@ -90,7 +90,7 @@
                 android:paddingLeft="10dp"
                 android:text="@string/Education"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/educaionInfo"
@@ -111,7 +111,7 @@
                 android:paddingLeft="10dp"
                 android:text="@string/Family"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/familyInfo"
@@ -121,7 +121,29 @@
                 android:fontFamily="sans-serif-light"
                 android:text="@string/Family_Info"
                 android:textSize="16sp" />
-        </LinearLayout>
+
+                        <TextView
+                android:id="@+id/familyStatus"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="25dp"
+                android:background="#bfd5ee"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="@string/FAMILY_STATUS"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/familyStatusInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/FAMILY_STATUS_INFO"
+                android:textSize="16sp" />
+            
+            </LinearLayout>
     </ScrollView>
 
 </RelativeLayout>

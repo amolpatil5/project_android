@@ -39,8 +39,7 @@
         android:textStyle="bold"
         android:layout_weight="1"
         android:textColor="@android:color/white"
-        android:text="Booth No."
-         >
+        android:text= "@string/Vidhan_Sabha_Booth_Num">
     </TextView>
     <TextView
         android:id="@+id/areaName"
@@ -49,7 +48,7 @@
         android:textColor="@android:color/white"
         android:layout_weight="2"
         android:textStyle="bold"
-        android:text="Part Name"
+        android:text= "@string/Vidhan_Sabha_Booth_Name"
         >
     </TextView>
 

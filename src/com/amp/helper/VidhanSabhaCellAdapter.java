@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import com.twostars.syadav.R;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +35,9 @@ public class VidhanSabhaCellAdapter extends ArrayAdapter<String>
 	        View rowView = inflater.inflate(R.layout.vidhan_sabha_cellview, parent, false);
 	        TextView areaSeqNum = (TextView) rowView.findViewById(R.id.areaSeqNum);
 	        TextView areaNamea = (TextView) rowView.findViewById(R.id.areaName);
+//	        Typeface font = Typeface.createFromAsset(context.getAssets(), "font/K010.TTF");
+//	        areaNamea. setTypeface(font);
+
 	        
 	        areaSeqNum.setText(Integer.toString((position+1)));
 	        areaNamea.setText(areaName);

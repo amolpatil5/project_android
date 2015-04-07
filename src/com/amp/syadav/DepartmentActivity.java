@@ -34,18 +34,18 @@ public class DepartmentActivity extends Activity
 		headerSettings();
 		departmentList = new ArrayList<DepartmentsData>();
 		
-		DepartmentsData dep1 = new DepartmentsData("Public Works Department","http://uppwd.up.nic.in/","#4a90e2");  
-		DepartmentsData dep2 = new DepartmentsData("Irrigation","http://irrigation.up.nic.in/","#4a90e2");
-		DepartmentsData dep3 = new DepartmentsData("Co-operative","http://cooperative.up.nic.in/","#4a90e2");
-		DepartmentsData dep4 = new DepartmentsData("Land Development & Water Resources","http://upldwr.up.nic.in/","#4a90e2");
-		DepartmentsData dep5 = new DepartmentsData("Flood Control","http://irrigation.up.nic.in/","#4a90e2");
-		DepartmentsData dep6 = new DepartmentsData("Irrigation (Mechanical)","http://irrigation.up.nic.in/","#4a90e2");
-		DepartmentsData dep7 = new DepartmentsData("Revenue","http://revenue.up.nic.in/","#4a90e2");
-		DepartmentsData dep8 = new DepartmentsData("Uttar Pradesh Cooperative Federation Limited","http://uppcf.org/","#4a90e2");
-		DepartmentsData dep9 = new DepartmentsData("Sodic &Ravine Land development","http://upldwr.up.nic.in/","#4a90e2");
-		DepartmentsData dep10 = new DepartmentsData("Waste Land Development","","#ffffff");
-		DepartmentsData dep11= new DepartmentsData("Disaster & Rehabilitation","","#ffffff");
-		DepartmentsData dep12 = new DepartmentsData("Public Service Management","","#ffffff");
+		DepartmentsData dep1 = new DepartmentsData(getResources().getString(R.string.Public_Works_Department),"http://uppwd.up.nic.in/","#4a90e2");  
+		DepartmentsData dep2 = new DepartmentsData(getResources().getString(R.string.Irrigation),"http://irrigation.up.nic.in/","#4a90e2");
+		DepartmentsData dep3 = new DepartmentsData(getResources().getString(R.string.Co_operative),"http://cooperative.up.nic.in/","#4a90e2");
+		DepartmentsData dep4 = new DepartmentsData(getResources().getString(R.string.Land_Development_Water_Resources),"http://upldwr.up.nic.in/","#4a90e2");
+		DepartmentsData dep5 = new DepartmentsData(getResources().getString(R.string.Flood_Control),"http://irrigation.up.nic.in/","#4a90e2");
+		DepartmentsData dep6 = new DepartmentsData(getResources().getString(R.string.Irrigation_Mechanical),"http://irrigation.up.nic.in/","#4a90e2");
+		DepartmentsData dep7 = new DepartmentsData(getResources().getString(R.string.Revenue),"http://revenue.up.nic.in/","#4a90e2");
+		DepartmentsData dep8 = new DepartmentsData(getResources().getString(R.string.Uttar_Pradesh_Cooperative_Federation_Limited),"http://uppcf.org/","#4a90e2");
+		DepartmentsData dep9 = new DepartmentsData(getResources().getString(R.string.Sodic_Ravine_Land_development),"http://upldwr.up.nic.in/","#4a90e2");
+		DepartmentsData dep10 = new DepartmentsData(getResources().getString(R.string.Waste_Land_Development),"","#ffffff");
+		DepartmentsData dep11= new DepartmentsData(getResources().getString(R.string.Disaster_Rehabilitation),"","#ffffff");
+		DepartmentsData dep12 = new DepartmentsData(getResources().getString(R.string.Public_Service_Management),"","#ffffff");
 
 		departmentList.add(dep1);
 		departmentList.add(dep2);
